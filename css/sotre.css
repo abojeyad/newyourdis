@@ -1,0 +1,43 @@
+
+
+/* بطاقة المتجر */
+.store-card {
+  width: 160px;
+  height: 120px;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* صورة المتجر */
+.store-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* التدرج السفلي */
+.store-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+  pointer-events: none;
+  z-index: 1; /* طبقة أقل */
+}
+
+/* اسم المتجر */
+.store-name {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 15px;
+  color: white;
+  font-weight: bold;
+  white-space: nowrap;
+  z-index: 2; /* طبقة أعلى */
+}

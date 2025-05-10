@@ -1,0 +1,67 @@
+body {
+  font-family: 'Cairo', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  direction: rtl;
+  margin: 0;
+  padding: 0;
+}
+
+.offers-title {
+  font-weight: bold;
+}
+
+/* ====== تخطيط الصفحة ====== */
+.page-layout {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+  height: calc(100vh - 60px); /* تخصيص حسب ارتفاع الهيدر */
+}
+
+/* ====== القسم الأوسط ====== */
+.main-content {
+  flex: 1;
+  background-color: #fff;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+/* ====== الفلاتر ====== */
+.filters-section {
+  width: 270px;
+  background-color: #fff;
+  padding: 16px;
+  border-right: 1px solid #ddd;
+  overflow-y: auto;
+}
+
+.filter-group {
+  margin-bottom: 20px;
+}
+
+/* إزالة المسافات بين جميع العناصر */
+header, .page-layout, .main-content, .filters-section {
+  margin: 0;
+}
+
+/* شبكة العروض */
+.offers-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 12px;
+  justify-content: flex-start;
+  overflow-x: hidden;
+  padding-bottom: 20px;
+  width: 100%;
+}
+
+.offers-selected-grid {
+  display: flex;
+  flex-wrap: wrap;         /* يسمح بانتقال العناصر للسطر الثاني */
+  gap: 12px;
+  padding-bottom: 20px;
+  width: 100%;
+  justify-content: flex-start; /* اختياري، لترتيب العناصر من اليمين */
+}

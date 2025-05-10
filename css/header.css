@@ -1,0 +1,78 @@
+/* ====== الخط العام وإعدادات الجسم ====== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Cairo', sans-serif;
+}
+
+body {
+  background-color: #f9f9f9;
+  color: #333;
+  direction: rtl;
+}
+
+/* ====== Header ====== */
+header {
+  background-color: #ffffff;
+  padding: 2px 24px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #ddd;
+  margin: 0;
+}
+
+.header-right,
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* أيقونة القائمة داخل الهيدر */
+.header-right .menu-toggle {
+  font-size: 20px;
+  color: #555;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-right .menu-toggle:hover {
+  background-color: #f0f0f0;
+}
+
+.language-selector,
+.notifications,
+.messages,
+.username {
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}
+
+.search-box {
+  flex: 1;
+  max-width: 400px;
+  margin: 8px 0;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.logo img {
+  width: 120px;
+  height: auto;
+}

@@ -1,0 +1,50 @@
+/* ads.css - تنسيقات مخصصة لقسم الإعلانات */
+
+/* تحديث العرض باستخدام Flexbox لعرض البطاقات في صف واحد */
+.ads-grid {
+  display: flex;
+  flex-wrap: nowrap; /* منع التمرير وظهور البطاقات في صف واحد */
+  gap: 16px;
+  margin-top: 20px;
+  overflow: hidden; /* إخفاء أي محتوى زائد */
+  padding-bottom: 20px; /* إضافة مساحة في أسفل القسم لضمان ظهور الحواف السفلية */
+}
+
+.ads-card {
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  flex-shrink: 0; /* لمنع التقلص */
+  width: 280px; /* عرض البطاقة أكبر */
+  height: 220px; /* زيادة الارتفاع لضمان ظهور العنوان والوصف */
+  display: flex;
+  flex-direction: column; /* جعل المحتوى داخل البطاقة عمودي */
+  padding: 0; /* إزالة الهوامش الداخلية للبطاقة لضمان تغطية الصورة بالكامل */
+}
+
+.ads-card img {
+  width: 100%;
+  height: 65%; /* تعديل ارتفاع الصورة لتغطي البطاقة بالكامل */
+  object-fit: cover; /* ضمان أن الصورة تغطي المساحة كاملة دون تشويه */
+}
+
+.ads-title {
+  font-weight: bold;
+  font-size: 16px;
+  margin: 8px 0 4px; /* تعديل المسافة بين العنوان والعناصر الأخرى */
+  color: #333;
+  z-index: 1; /* لضمان ظهور العنوان فوق الصورة */
+  position: relative; /* وضع العنوان بشكل نسبي */
+}
+
+.ads-description {
+  font-size: 14px;
+  color: #666;
+  margin: 4px 0 8px; /* تعديل المسافة بين الوصف وأسفل البطاقة */
+  line-height: 1.5;
+  flex-grow: 1; /* يملأ المساحة المتبقية داخل البطاقة */
+  overflow: hidden;
+  z-index: 1; /* لضمان ظهور الوصف فوق الصورة */
+  position: relative; /* وضع الوصف بشكل نسبي */
+}

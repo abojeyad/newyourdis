@@ -1,0 +1,54 @@
+/* حاوية التصنيفات */
+.category-bar {
+  width: 100%;
+  overflow: hidden;
+  padding: 10px 0;
+  box-sizing: border-box;
+}
+
+/* صف التصنيفات الرئيسية */
+.chip-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  margin-bottom: 10px; /* إضافة مسافة بين الصفين */
+}
+
+/* صف التصنيفات الفرعية */
+.chip-row.subcategories {
+  display: flex;
+  gap: 10px;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+/* تنسيق التصنيفات */
+.chip {
+  padding: 6px 16px;
+  border-radius: 20px;
+  background-color: #e0e0e0;
+  color: #333;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* تغيير اللون عند التمرير على التصنيف */
+.chip:hover {
+  background-color: #d5d5d5;
+}
+
+/* التصنيف النشط */
+.chip.active {
+  background-color: #ff9800;
+  color: white;
+  font-weight: bold;
+}
+
+/* تفاعل الشيب مع النصوص الطويلة */
+.chip.long {
+  padding: 6px 20px;
+}
