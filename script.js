@@ -236,3 +236,30 @@ function toggleMenu() {
     attachDropdownBehavior();
   }
 })();
+
+// ==== نسخة أبسط لإدارة القائمة على الموبايل ====
+(function simpleMobileMenu() {
+  const toggle = document.querySelector('.menu-toggle');
+  const menu = document.getElementById('menu');
+  if (!toggle || !menu) return;
+
+  menu.classList.add('hidden-menu');
+
+  toggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    menu.classList.toggle('hidden-menu');
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!menu.classList.contains('hidden-menu')) {
+      if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+        menu.classList.add('hidden-menu');
+      }
+    }
+  });
+
+  menu.addEventListener('click', (e) => {
+    const li = e.target.closest('li, a, button');
+    if (li) menu.classList.add('hidden-menu');
+  });
+})();
