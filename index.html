@@ -5,31 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>منصة يوردس</title>
 
-  <!-- روابط التنسيق -->
   <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/menu.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/categories.css">
   <link rel="stylesheet" href="css/product-card.css">
-  <link rel="stylesheet" href="css/sotre.css"> 
+  <link rel="stylesheet" href="css/store.css"> 
   <link rel="stylesheet" href="css/ads.css">
+  <link rel="stylesheet" href="css/footer.css">
 
-
-  <!-- أيقونات و خطوط -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+
+  <style>
+    .username {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .username img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  </style>
 </head>
 
 <body>
-
-  <!-- ====== الشريط العلوي ====== -->
   <header>
     <div class="header-right">
-      <div class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
-	        <div class="username"> محمد أحمد</div>
-      <div class="language-selector"> 🌐 English</div>
-      <div class="notifications">🔔 الإشعارات (10)</div>
-      <div class="messages">✉️ الرسائل (0)</div>
+      <!-- الآن يحتوي على صورة أفاتار -->
+      <div class="username" id="userToggle" role="button" aria-haspopup="true" aria-expanded="false">
+        <img src="images/avatar.jpg" alt="صورة المستخدم">
+        <span>محمد أحمد</span>
+        <span class="user-arrow" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
+      </div>
     </div>
 
     <div class="search-box">
@@ -37,130 +50,109 @@
     </div>
 
     <div class="header-left">
-	      <div class="logo"><img src="logo.png" alt="شعار المنصة" /></div>
+      <div class="language-selector"> 🌐 English</div>
+      <div class="notifications">🔔 الإشعارات (10)</div>
+      <div class="messages">✉️ الرسائل (0)</div>
+      <div class="logo"><img src="logo.png" alt="شعار المنصة" /></div>
     </div>
   </header>
 
-  <!-- ====== تخطيط الصفحة ====== -->
   <main class="page-layout">
+    <aside class="menu-section hidden-menu" id="menu">
+      <ul>
+        <li class="active"><i class="fas fa-home"></i> <span>الرئيسية</span></li>
+        <li><i class="fas fa-store"></i> <span>متجري</span></li>
+        <li><i class="fas fa-bookmark"></i> <span>المفضلة</span></li>
+        <li><i class="fas fa-chart-line"></i> <span>الإحصائيات</span></li>
+        <li><i class="fas fa-cog"></i> <span>إعدادات المتجر</span></li>
+        <li><i class="fas fa-sign-out-alt"></i> <span>تسجيل خروج</span></li>
+      </ul>
+    </aside>
+<section class="main-content">
+  <div id="category-bar"></div>
 
-    <!-- القائمة اليمنى -->
-	<aside class="menu-section" id="menu">
-  <ul>
-    <li class="active"><i class="fas fa-home"></i> <span>الرئيسية</span></li>
-    <li><i class="fas fa-store"></i> <span>متجري</span></li>
-    <li><i class="fas fa-bookmark"></i> <span>المفضلة</span></li>
-    <li><i class="fas fa-chart-line"></i> <span>الإحصائيات</span></li>
-    <li><i class="fas fa-cog"></i> <span>إعدادات المتجر</span></li>
-    <li><i class="fas fa-user-shield"></i> <span>الخصوصية والأمان</span></li>
-    <li><i class="fas fa-question-circle"></i> <span>مركز المساعدة</span></li>
-    <li><i class="fas fa-envelope"></i> <span>تواصل معنا</span></li>
-    <li><i class="fas fa-info-circle"></i> <span>حول يوردس</span></li>
-    <li><i class="fas fa-code"></i> <span>وثائق API</span></li>
-    <li><i class="fas fa-blog"></i> <span>مدونة يوردس</span></li>
-    <li><i class="fas fa-sign-out-alt"></i> <span>تسجيل خروج</span></li>
-  </ul>
-</aside>
-
-
-    <!-- القسم الأوسط (المحتوى الديناميكي) -->
-    <section class="main-content">
-
-      <!-- التصنيفات -->
-      <div class="category-bar">
-        <div class="chip-row">
-          <div class="chip">الإلكترونيات</div>
-          <div class="chip">المنزل</div>
-          <div class="chip">الأطفال</div>
-          <div class="chip">الجمال</div>
-          <div class="chip">الرياضة</div>
-          <div class="chip active">الأزياء</div>
-          <div class="chip">الكتب</div>
-          <div class="chip">الصحة والعافية</div>
-          <div class="chip">الرحلات والسفر</div>
-          <div class="chip">التحف والمقتنيات</div>
-          <div class="chip">الموسيقى والفن</div>
-          <div class="chip">الألعاب</div>
-          <div class="chip">الأدوات المكتبية</div>
-          <div class="chip">الحيوانات الأليفة</div>
-          <div class="chip">الأجهزة الذكية</div>
-          <div class="chip">الطعام والمشروبات</div>
-          <div class="chip">الديكور</div>
-          <div class="chip">الكتب الصوتية</div>
-          <div class="chip">العطور</div>
-          <div class="chip">التكنولوجيا</div>
-        </div>
-
-        <div class="chip-row">
-          <div class="chip">فساتين</div>
-          <div class="chip active">أحذية</div>
-          <div class="chip">حقائب</div>
-          <div class="chip">نظارات</div>
-          <div class="chip">إكسسوارات</div>
-        </div>
-      </div>
-
-      <!-- أفضل العروض -->
-      <div class="offers-title">أفضل العروض</div>
-      <div id="offers" class="offers-grid"></div>
-
-      <!-- متاجر مميزة -->
-      <div class="offers-title">متاجر مميزة</div>
-      <div id="stores" class="offers-grid"></div>
-
-      <!-- عروض تهمك -->
-      <div class="offers-title">عروض تهمك</div>
-      <div id="offers-recommended" class="offers-grid"></div>
-			  
-		<!-- قسم الإعلانات بدون عنوان -->
-		<div id="ads-section" class="ads-grid"></div>
-
-		<!-- عروض مختارة -->
-		<div class="offers-title">عروض مختارة</div>
-		<div id="offers-selected" class="offers-selected-grid"></div>
-
-    </section>
-
-    <!-- الفلاتر على اليسار -->
-	<aside class="filters-section">
-  <div class="filter-group">
-    <h3>الترتيب</h3>
-	<label><input type="checkbox" checked> افتراضي</label><br>
-    <label><input type="checkbox"> أعلى نسبة تخفيض</label><br>
-    <label><input type="checkbox"> السعر من الأقل إلى الأكثر</label><br>
-    <label><input type="checkbox"> السعر من الأكثر إلى الأقل</label><br>
-    <label><input type="checkbox"> القريبة مني</label>
+  <div class="section-header">
+    <div class="offers-title">أفضل العروض</div>
+    <a href="#" class="view-all">عرض الكل <i class="fas fa-angle-left"></i></a>
   </div>
+  <div id="offers" class="offers-grid"></div>
 
-  <div class="filter-group">
-    <h3>الفئة</h3>
-    <label><input type="checkbox" checked> الكل</label><br>
-    <label><input type="checkbox"> نساء</label><br>
-    <label><input type="checkbox"> رجال</label><br>
-    <label><input type="checkbox"> أطفال</label>
+  <div class="section-header">
+    <div class="offers-title">متاجر مميزة</div>
+    <a href="#" class="view-all">عرض الكل <i class="fas fa-angle-left"></i></a>
   </div>
+  <div id="stores" class="offers-grid"></div>
 
-  <div class="filter-group">
-    <h3>الخصم</h3>
-    <label><input type="checkbox"checked> الكل</label><br>
-    <label><input type="checkbox"> تخفيض 25% فأكثر</label><br>
-    <label><input type="checkbox"> تخفيض 50% فأكثر</label><br>
-    <label><input type="checkbox"> تخفيض 75% فأكثر</label>
+  <div class="section-header">
+    <div class="offers-title">عروض تهمك</div>
+    <a href="#" class="view-all">عرض الكل <i class="fas fa-angle-left"></i></a>
   </div>
+  <div id="offers-recommended" class="offers-grid"></div>
 
-  <div class="filter-group">
-    <h3>المدة</h3>
-    <label><input type="checkbox"checked> الكل</label><br>
-    <label><input type="checkbox"> تنتهي خلال 8 ساعات</label><br>
-    <label><input type="checkbox"> تنتهي خلال 24 ساعة</label>
+  <div id="ads-section" class="ads-grid"></div>
+
+  <div class="section-header">
+    <div class="offers-title">المجموعة الأولى</div>
+    <a href="#" class="view-all">عرض الكل <i class="fas fa-angle-left"></i></a>
   </div>
-</aside>
+  <div id="group1" class="offers-grid"></div>
 
+  <div class="section-header">
+    <div class="offers-title">المجموعة الثانية</div>
+    <a href="#" class="view-all">عرض الكل <i class="fas fa-angle-left"></i></a>
+  </div>
+  <div id="group2" class="offers-grid"></div>
+
+  <div class="section-header">
+    <div class="offers-title">المجموعة الثالثة</div>
+    <a href="#" class="view-all">عرض الكل <i class="fas fa-angle-left"></i></a>
+  </div>
+  <div id="group3" class="offers-grid"></div>
+</section>
 
   </main>
+  
+  <footer>
+    <div class="footer-content">
+      <div class="footer-top-row">
+        <div class="footer-logo">
+      <div class="logo"><img src="logo.png" alt="شعار المنصة" /></div>
+        </div>
+        <nav class="footer-links">
+          <a href="#">من نحن</a>
+          <a href="#">الخصوصية والأمان</a>
+          <a href="#">مدونة يوردس</a>
+          <a href="#">مركز المساعدة</a>
+          <a href="#">تواصل معنا</a>
+          <a href="#">وثائق API</a>
+        </nav>
+      </div>
 
-  <!-- سكربت توليد البطاقات -->
+      <hr class="footer-divider">
+
+      <div class="footer-bottom-row">
+        <div class="footer-copyright">
+          © Yourdis 2025. All rights reserved.
+        </div>
+        <div class="footer-app-stores">
+          <a href="#" class="app-store-link">
+            <img src="images/app-store.png" alt="Download on the App Store" class="app-store-img">
+          </a>
+          <a href="#" class="app-store-link">
+            <img src="images/google-play.png" alt="Get it on Google Play" class="app-store-img">
+          </a>
+        </div>
+        <div class="footer-social-media">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="categories.js"></script>
   <script src="script.js"></script>
-
 </body>
 </html>
