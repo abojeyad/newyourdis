@@ -14,7 +14,7 @@ body {
 
 /* ====== Header ====== */
 header {
-  background-color: #ffffff;
+  background-color: #f7f7f7;
   padding: 2px 24px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
   display: flex;
@@ -22,8 +22,13 @@ header {
   justify-content: space-between;
   flex-wrap: wrap;
   border-bottom: 1px solid #ddd;
-  margin: 0;
+
+  /* التعديل لتثبيت الهيدر */
+  position: sticky; /* أو fixed */
+  top: 0;
+  z-index: 1000; /* ليكون فوق كل العناصر */
 }
+
 
 .header-right,
 .header-left {
@@ -32,8 +37,13 @@ header {
   gap: 16px;
 }
 
-/* أيقونة القائمة داخل الهيدر */
+/* (تم حذف عرض أيقونة الهامبرغر من الHTML، لكن نحتفظ بأي قواعد محتملة غير مستخدمة) */
 .header-right .menu-toggle {
+  display: none; /* لم تعد مستخدمة — نضمن اختفائها */
+}
+
+/* أيقونة الهامبرغر (غير مستخدمة) */
+/* .header-right .menu-toggle {
   font-size: 20px;
   color: #555;
   cursor: pointer;
@@ -47,7 +57,7 @@ header {
 
 .header-right .menu-toggle:hover {
   background-color: #f0f0f0;
-}
+} */
 
 .language-selector,
 .notifications,
@@ -75,4 +85,89 @@ header {
 .logo img {
   width: 120px;
   height: auto;
+}
+
+/* اسم المستخدم: قابل للنقر */
+.username {
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 6px;
+  transition: background-color 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.username:hover {
+  background-color: #f0f0f0;
+}
+
+/* سهم بجانب الاسم */
+.user-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.18s ease;
+  font-size: 12px;
+  color: #666;
+}
+
+/* دوران السهم عند توسيع القائمة — يعتمد على aria-expanded على العنصر */
+.username[aria-expanded="true"] .user-arrow {
+  transform: rotate(180deg);
+}
+
+/* ===== صندوق القائمة المنسدلة داخل الهيدر ===== */
+.user-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 6px;
+  min-width: 220px;
+  max-width: 320px;
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  border-radius: 8px;
+  overflow: hidden;
+  display: none;
+  z-index: 1100;
+  direction: rtl;
+}
+
+.user-dropdown.show {
+  display: block;
+}
+
+/* نمط القائمة المستنسخة داخل المنسدلة */
+.user-dropdown .user-dropdown-list {
+  list-style: none;
+  margin: 0;
+  padding: 8px 0;
+}
+.user-dropdown .user-dropdown-list li {
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+}
+.user-dropdown .user-dropdown-list li i {
+  margin-left: 8px;
+  margin-right: 0;
+  font-size: 18px;
+  color: #666;
+  min-width: 18px;
+}
+.user-dropdown .user-dropdown-list li:hover {
+  background: #f7f7f7;
+}
+.user-dropdown .user-dropdown-list li span {
+  display: inline-block;
+}
+.user-dropdown .user-dropdown-list li.active {
+  background-color: #f0f0f0;
+  font-weight: bold;
+  color: #000;
+  border-right: 3px solid #007bff;
 }

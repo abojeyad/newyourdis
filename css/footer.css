@@ -1,0 +1,120 @@
+/* تنسيق الفوتر العام */
+footer {
+    background-color: #f7f7f7; 
+    padding: 20px 0;
+    font-family: 'Cairo', sans-serif;
+    color: #333;
+    box-sizing: border-box;
+    width: 100%; /* تأكيد أن الفوتر يمتد على كامل العرض */
+    /* إذا كنت تستخدم خاصية الـ flex على body، تأكد من إضافة: flex-shrink: 0; */
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* الصف العلوي (الشعار والروابط) */
+.footer-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.footer-logo .logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #5d3e75; 
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+    font-size: 14px;
+    color: #333;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+    white-space: nowrap;
+}
+
+.footer-links a:hover {
+    color: #ff9800; 
+}
+
+/* الخط الفاصل */
+.footer-divider {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 0;
+}
+
+/* الصف السفلي (الحقوق والأيقونات) */
+.footer-bottom-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    font-size: 13px;
+    flex-wrap: wrap; 
+}
+
+/* حقوق النشر */
+.footer-copyright {
+    color: #666;
+    order: 1; /* لتحديد الترتيب */
+}
+
+/* أيقونات متاجر التطبيقات */
+.footer-app-stores {
+    display: flex;
+    gap: 10px;
+    order: 2; 
+}
+
+.footer-app-stores .app-store-img {
+    height: 35px; 
+    vertical-align: middle;
+}
+
+/* أيقونات السوشيال ميديا */
+.footer-social-media {
+    display: flex;
+    gap: 15px;
+    font-size: 18px;
+    order: 3;
+}
+
+.footer-social-media a {
+    color: #555;
+    transition: color 0.3s;
+}
+
+.footer-social-media a:hover {
+    color: #ff9800;
+}
+
+/* استجابة الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .footer-top-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+    .footer-bottom-row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+    }
+}

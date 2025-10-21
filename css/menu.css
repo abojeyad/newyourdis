@@ -8,6 +8,11 @@
   transition: width 0.3s ease;
 }
 
+/* عندما نريد إخفاء القائمة من العرض لكن تبقى في الـ DOM */
+.menu-section.hidden-menu {
+  display: none;
+}
+
 .menu-section:hover {
   overflow-y: auto;
 }

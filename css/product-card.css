@@ -8,6 +8,8 @@
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
   font-family: 'Cairo', sans-serif;
   position: relative;
+  flex: 0 0 auto; /* يمنع تصغير عرض البطاقة */
+
 }
 
 .product-image {
@@ -35,7 +37,7 @@
 }
 
 .countdown-timer {
-  background-color: orange;
+  background-color: #EA9F06;
   padding: 2px 5px;
   border-radius: 2px;
   color: white;
@@ -100,7 +102,7 @@
 }
 
 .order-now-btn {
-  background-color: orange;
+  background-color: #EA9F06;
   color: white;
   border: none;
   padding: 6px 0;

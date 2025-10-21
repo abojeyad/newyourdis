@@ -1,0 +1,73 @@
+/* بطاقة المتجر - مطابق تمامًا لـ .category-card */
+.store-card {
+  width: 120px;
+  height: 100px;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  flex: 0 0 auto; 
+}
+
+/* صورة المتجر - مطابق لـ .category-card img */
+.store-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* التدرج - مطابق لـ .category-card::after */
+.store-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* اسم المتجر - مطابق لـ .category-name */
+.store-name {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 13px;
+  font-weight: bold;
+  color: #fff;
+  white-space: nowrap;
+  z-index: 2;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+  text-align: center;
+  padding: 0 6px;
+}
+
+/* شريط المتاجر - تطبيق تنسيقات العرض الأفقي والتمرير */
+#stores {
+  display: flex; 
+  flex-direction: row;
+  flex-wrap: nowrap;     
+  overflow-x: auto;      
+  gap: 10px;             
+  padding: 10px 0;
+  scrollbar-width: none; 
+}
+#stores::-webkit-scrollbar {
+  display: none; 
+}
+
+/* إضافة تنسيقات العرض الأفقي لـ .offers-grid لضمان عدم وجود تعارض */
+.offers-grid {
+    display: flex; 
+    flex-wrap: nowrap; 
+    overflow-x: auto; 
+    gap: 10px;
+    padding: 10px 0;
+    scrollbar-width: none;
+}
+.offers-grid::-webkit-scrollbar {
+    display: none;
+}

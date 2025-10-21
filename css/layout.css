@@ -17,7 +17,6 @@ body {
   margin: 0;
   padding: 0;
   gap: 0;
-  height: calc(100vh - 60px); /* تخصيص حسب ارتفاع الهيدر */
 }
 
 /* ====== القسم الأوسط ====== */
@@ -28,33 +27,31 @@ body {
   overflow-y: auto;
 }
 
-/* ====== الفلاتر ====== */
-.filters-section {
-  width: 270px;
-  background-color: #fff;
-  padding: 16px;
-  border-right: 1px solid #ddd;
-  overflow-y: auto;
-}
-
-.filter-group {
-  margin-bottom: 20px;
-}
-
 /* إزالة المسافات بين جميع العناصر */
 header, .page-layout, .main-content, .filters-section {
   margin: 0;
 }
 
 /* شبكة العروض */
+/* شبكة العروض */
 .offers-grid {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: nowrap;          /* كل البطاقات في صف واحد */
   gap: 12px;
   justify-content: flex-start;
-  overflow-x: hidden;
+  overflow-x: auto;           /* يسمح بالتمدد الأفقي */
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;      /* إخفاء شريط التمرير */
+  -ms-overflow-style: none;
   padding-bottom: 20px;
   width: 100%;
+}
+
+/* إخفاء شريط التمرير في كروم وسفاري */
+.offers-grid::-webkit-scrollbar {
+  display: none;
 }
 
 .offers-selected-grid {
@@ -64,4 +61,40 @@ header, .page-layout, .main-content, .filters-section {
   padding-bottom: 20px;
   width: 100%;
   justify-content: flex-start; /* اختياري، لترتيب العناصر من اليمين */
+}
+
+
+/* زر عرض الكل */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px 0 8px;
+}
+
+.section-header .offers-title {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.section-header .view-all {
+  font-size: 14px;
+  color: #333; /* لون النص */
+  background-color: #f0f0f0; /* خلفية رمادية فاتحة */
+  padding: 4px 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.section-header .view-all:hover {
+  background-color: #e0e0e0; /* لون أغمق قليلًا عند المرور */
+  color: #007bff; /* تغيير لون النص عند المرور */
+}
+
+.section-header .view-all i {
+  font-size: 12px;
 }
