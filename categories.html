@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>منصة يوردس</title>
+
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/product-card.css">
+  <link rel="stylesheet" href="css/categoriespage.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+
+  <style>
+    .username {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .username img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+
+<body>
+<header>
+
+  <div class="header-right">
+    <div class="username" id="userToggle" role="button" aria-haspopup="true" aria-expanded="false">
+      <img src="images/avatar.jpg" alt="صورة المستخدم">
+      <span>محمد أحمد</span>
+      <span class="user-arrow" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
+    </div>
+  </div>
+  
+  <div class="menu-toggle">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <div class="search-box">
+    <input type="text" placeholder="استكشف أفضل العروض.." />
+  </div>
+
+  <div class="header-left">
+    <div class="language-selector"> 🌐 English</div>
+    <div class="notifications">🔔 الإشعارات (10)</div>
+    <div class="messages">✉️ الرسائل (0)</div>
+    <div class="logo"><img src="logo.png" alt="شعار المنصة" /></div>
+  </div>
+
+</header>
+
+<main class="page-layout">
+  <aside class="menu-section hidden-menu" id="menu">
+    <ul>
+      <li class="active">
+        <a href="index.html" style="text-decoration:none; color:inherit; display:flex; align-items:center;">
+          <i class="fas fa-home"></i> <span>الرئيسية</span>
+        </a>
+      </li>
+      <li><i class="fas fa-store"></i> <span>متجري</span></li>
+      <li><i class="fas fa-bookmark"></i> <span>المفضلة</span></li>
+      <li><i class="fas fa-chart-line"></i> <span>الإحصائيات</span></li>
+      <li><i class="fas fa-cog"></i> <span>إعدادات المتجر</span></li>
+      <li><i class="fas fa-sign-out-alt"></i> <span>تسجيل خروج</span></li>
+    </ul>
+  </aside>
+
+  <!-- ===== القسم الرئيسي ===== -->
+  <section class="main-content">
+
+    <!-- شريط الفئات الفرعية (أعلى) -->
+    <div class="subcategories-bar">
+      <button class="subcat active">الكل</button>
+      <button class="subcat">عطور رجالية</button>
+      <button class="subcat">عطور نسائية</button>
+      <button class="subcat">عطور تيستر</button>
+      <button class="subcat">عطور فخمة</button>
+      <button class="subcat">مجموعات عطرية</button>
+      <button class="subcat">عود وبخور</button>
+      <button class="subcat">زيوت عطرية</button>
+      <button class="subcat">ميني عطور</button>
+      <button class="subcat">عروض خاصة</button>
+    </div>
+
+    <!-- ===== الأسفل: الفلاتر + المنتجات ===== -->
+    <div class="content-bottom">
+
+      <!-- لوحة الفلاتر الجانبية (يمين) -->
+      <aside class="filters-panel">
+        <h3>تصفية العروض</h3>
+
+        <div class="filter-group">
+          <h4>الترتيب</h4>
+          <label><input type="radio" name="sort" checked> افتراضي</label>
+          <label><input type="radio" name="sort"> أعلى نسبة تخفيض</label>
+          <label><input type="radio" name="sort"> السعر: من الأقل إلى الأعلى</label>
+          <label><input type="radio" name="sort"> السعر: من الأعلى إلى الأقل</label>
+          <label><input type="radio" name="sort"> القريبة مني</label>
+        </div>
+
+        <div class="filter-group">
+          <h4>الفئة</h4>
+          <label><input type="radio" name="gender" checked> الكل</label>
+          <label><input type="radio" name="gender"> رجال</label>
+          <label><input type="radio" name="gender"> نساء</label>
+          <label><input type="radio" name="gender"> أطفال</label>
+        </div>
+
+        <div class="filter-group">
+          <h4>خصم %</h4>
+          <label><input type="radio" name="discount" checked> الكل</label>
+          <label><input type="radio" name="discount"> تخفيض 25% فأكثر</label>
+          <label><input type="radio" name="discount"> تخفيض 50% فأكثر</label>
+          <label><input type="radio" name="discount"> تخفيض 75% فأكثر</label>
+        </div>
+
+        <div class="filter-group">
+          <h4>المدة</h4>
+          <label><input type="radio" name="duration" checked> الكل</label>
+          <label><input type="radio" name="duration"> تنتهي خلال 8 ساعات</label>
+          <label><input type="radio" name="duration"> تنتهي خلال 24 ساعة</label>
+        </div>
+      </aside>
+
+      <!-- شبكة العروض (المنتجات) -->
+      <div id="offers" class="offers-grid"></div>
+
+    </div> <!-- /.content-bottom -->
+
+  </section>
+</main>
+
+<script src="categories.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

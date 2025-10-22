@@ -129,15 +129,22 @@ const group1Container      = document.getElementById("group1");
 const group2Container      = document.getElementById("group2");
 const group3Container      = document.getElementById("group3");
 
+// === إنشاء بطاقات الأقسام التي تفتح نفس الصفحة التجريبية categories.html ===
 categories.forEach(cat => {
-  const catCard = document.createElement("div");
-  catCard.classList.add("category-card");
-  catCard.innerHTML = `
+  const link = document.createElement('a');
+  link.className = 'category-card';
+  link.href = 'categories.html';     // كل الأقسام تفتح نفس الصفحة
+
+  link.rel = 'noopener noreferrer';
+
+  link.innerHTML = `
     <img src="${cat.image}" alt="${cat.name}" class="category-img">
     <div class="category-name">${cat.name}</div>
   `;
-  if (categoryBar) categoryBar.appendChild(catCard);
+
+  if (categoryBar) categoryBar.appendChild(link);
 });
+
 
 featuredStores.forEach(store => {
   const storeCard = document.createElement("div");
@@ -263,3 +270,5 @@ function toggleMenu() {
     if (li) menu.classList.add('hidden-menu');
   });
 })();
+
+
