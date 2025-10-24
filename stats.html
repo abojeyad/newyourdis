@@ -7,18 +7,13 @@
 
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/menu.css">
-  <link rel="stylesheet" href="css/product-card.css">
-  <link rel="stylesheet" href="css/store.css"> 
-  <link rel="stylesheet" href="css/ads.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/product-page.css">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
 
   <style>
-    body {
-      font-family: 'Cairo', sans-serif;
-    }
-
     .username {
       display: flex;
       align-items: center;
@@ -32,36 +27,12 @@
       border-radius: 50%;
       object-fit: cover;
     }
-
-    /* كل مجموعة تبقى صف أفقي، والمجموعات عمودية */
-    .offers-grid {
-      display: flex;           /* المتاجر أفقية */
-      flex-direction: row;
-      gap: 16px;               /* مسافة بين المتاجر */
-      margin-bottom: 40px;     /* مسافة بين المجموعات */
-      overflow-x: auto;        /* تمرير أفقي عند الحاجة */
-      padding-bottom: 10px;
-    }
-
-    .section-header {
-      margin: 20px 0 10px;
-      font-size: 22px;
-      font-weight: bold;
-    }
-
-    .offers-grid::-webkit-scrollbar {
-      height: 6px;
-    }
-
-    .offers-grid::-webkit-scrollbar-thumb {
-      background-color: #ccc;
-      border-radius: 3px;
-    }
   </style>
 </head>
 
 <body>
 <header>
+
   <div class="header-right">
     <div class="username" id="userToggle" role="button" aria-haspopup="true" aria-expanded="false">
       <img src="images/avatar.jpg" alt="صورة المستخدم">
@@ -84,6 +55,7 @@
     <div class="messages">✉️ الرسائل (0)</div>
     <div class="logo"><img src="logo.png" alt="شعار المنصة" /></div>
   </div>
+
 </header>
 
   <main class="page-layout">
@@ -110,18 +82,15 @@
 	  </ul>
 	</aside>
 
-  <!-- مجموعات المتاجر -->
-  <div class="section-header">متاجر العطور</div>
-  <div id="stores-perfume" class="offers-grid"></div>
+<section class="myprod-page" dir="rtl">
 
-  <div class="section-header">متاجر الملابس</div>
-  <div id="stores-clothes" class="offers-grid"></div>
 
-  <div class="section-header">متاجر الأحذية</div>
-  <div id="stores-shoes" class="offers-grid"></div>
-</main>
+</section>
 
-<script src="store.js"></script>
+
+
+
+<script src="js/product-page.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

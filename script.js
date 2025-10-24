@@ -74,7 +74,9 @@ const desiredSizes = {
   best: 18,
   group1: 10,
   group2: 10,
-  group3: 10
+  group3: 10,
+  group4: 6
+  
 };
 
 const offsets = {
@@ -82,7 +84,8 @@ const offsets = {
   best: 5,
   group1: 0,
   group2: 3,
-  group3: 6
+  group3: 6,
+  group4: 6
 };
 
 const offersGroups = {
@@ -90,7 +93,9 @@ const offersGroups = {
   best:        makeGroup(desiredSizes.best,        offsets.best),
   group1:      makeGroup(desiredSizes.group1,      offsets.group1),
   group2:      makeGroup(desiredSizes.group2,      offsets.group2),
-  group3:      makeGroup(desiredSizes.group3,      offsets.group3)
+  group3:      makeGroup(desiredSizes.group3,      offsets.group3),
+  group4:      makeGroup(desiredSizes.group4,      offsets.group4)
+
 };
 
 
@@ -187,6 +192,16 @@ if (recommendedContainer) offersGroups.recommended.forEach(p => recommendedConta
 if (group1Container) offersGroups.group1.forEach(p => group1Container.appendChild(createProductCard(p)));
 if (group2Container) offersGroups.group2.forEach(p => group2Container.appendChild(createProductCard(p)));
 if (group3Container) offersGroups.group3.forEach(p => group3Container.appendChild(createProductCard(p)));
+
+// أي عنصر يحمل class "group4" سيتم ملؤه بنفس المجموعة من المنتجات
+const group4Containers = document.querySelectorAll('.group4');
+
+group4Containers.forEach(container => {
+  offersGroups.group4.forEach(product => {
+    container.appendChild(createProductCard(product));
+  });
+});
+
 
 function toggleMenu() {
   const menu = document.getElementById('menu');
