@@ -1,0 +1,404 @@
+/*
+========================================
+1. التنسيقات الأساسية
+========================================
+*/
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  margin: 0;
+  padding: 0 15px 10px 15px;
+  background-color: #fff;
+  border-radius: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  direction: rtl;
+}
+
+/*
+========================================
+2. تنسيقات القسم الأول: معلومات المتجر
+========================================
+*/
+
+.row {
+  display: flex;
+  gap: 15px;
+  border-bottom: 1px solid #eee;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.row img {
+  width: 120px; 
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #f0f0f0; 
+  flex-shrink: 0;
+}
+
+.store-info {
+  flex-grow: 1;
+  text-align: right;
+  padding-top: 0; 
+}
+
+.store-header {
+    display: flex;
+    align-items: center; 
+    gap: 8px; 
+    margin-bottom: -4px;
+}
+
+.store-name {
+  font-size: 18px; 
+  font-weight: bold;
+  color: #333;
+  line-height: 1;
+  margin-bottom: 0;
+  flex-shrink: 0;
+}
+
+.store-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px; 
+}
+.store-meta .username {
+  font-size: 13px;
+  color: #007bff;
+  font-weight: 500;
+  line-height: 1;
+}
+.store-meta .type-tag {
+  font-size: 12px;
+  color: #6c757d;
+  font-weight: normal;
+  line-height: 1;
+}
+
+.store-description {
+  font-size: 14px; 
+  color: #333;
+  line-height: 1;
+  margin-top: 2px;
+  margin-bottom: -3px; 
+  padding-bottom: 0px;
+}
+
+.store-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px; 
+  margin-top: 0px; 
+  justify-content: flex-start;
+}
+
+.store-actions span {
+  font-size: 13px; 
+  font-weight: 600;
+  color: #555;
+  padding: 3px 0; 
+  display: flex;
+  align-items: center;
+  gap: 3px; 
+}
+.store-actions span::before {
+    content: "\f004";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: #654321;
+}
+
+.store-actions button {
+  padding: 5px 10px; 
+  border: none;
+  border-radius: 4px; 
+  font-size: 12px; 
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-family: 'Cairo', sans-serif;
+  display: flex;
+  align-items: center;
+}
+
+.store-actions button i {
+    margin-left: 5px; 
+    font-size: 12px;
+}
+
+.follow {
+  background-color: #654321;
+  color: white;
+  font-weight: bold;
+}
+.follow:hover {
+  background-color: #4e3518;
+}
+
+.message, .share, .report, .block {
+  background-color: #f0f0f0;
+  color: #333;
+}
+.message:hover, .share:hover {
+  background-color: #e0e0e0;
+}
+
+.report, .block {
+  color: #dc3545;
+  background-color: #ffe0e0;
+}
+.report:hover, .block:hover {
+  background-color: #ffc8c8;
+}
+
+/*
+========================================
+3. تنسيقات القسم الثاني: Tabs والإجراءات
+========================================
+*/
+.second-row {
+  width: 100%;
+  margin-top: 15px;
+  padding: 15px;
+}
+
+.tabs-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+.tabs-right {
+  display: flex;
+  gap: 8px;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 14px;
+  cursor: pointer;
+  color: #555;
+  border-bottom: 2px solid transparent;
+  transition: 0.2s;
+}
+
+.tab-btn:hover {
+  color: #000;
+}
+
+.tab-btn.active {
+  color: #654321;
+  border-bottom: 2px solid #654321;
+}
+
+.actions-left {
+  position: relative;
+}
+
+.actions-btn {
+  background-color: #654321;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.actions-btn i {
+  margin-right: 5px;
+}
+
+.actions-menu {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  list-style: none;
+  padding: 6px 0;
+  margin: 5px 0 0 0;
+  z-index: 20;
+  min-width: 150px;
+  text-align: right; 
+}
+
+.actions-menu li {
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.2s;
+  text-align: right; 
+}
+
+.actions-menu li:hover {
+  background-color: #f8f8f8;
+}
+
+.tabs-content {
+  padding-top: 15px;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.empty-text {
+  color: #777;
+  text-align: center;
+  font-size: 14px;
+  padding: 20px 0;
+}
+
+/*
+========================================
+4. التجاوب مع شاشات الجوال (Media Queries)
+========================================
+*/
+@media (max-width: 600px) {
+  
+  .container {
+    padding: 10px;
+  }
+
+  /* تنسيق شبكة العروض */
+  .offers-grid {
+    width: 100%;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+  }
+  
+  /* إخفاء زر الإجراءات تماماً */
+  .actions-left {
+    display: none; 
+  }
+  
+  /* تضييق المساحة الفارغة في القسم العلوي */
+  .row {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 5px; /* تقليل الحشو السفلي في الصف */
+  }
+
+  .store-info {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 0;
+  }
+  
+  /* تضييق المسافات بين عناصر معلومات المتجر */
+  .store-header {
+      flex-direction: column;
+      gap: 0px; /* تقليل الفراغ */
+      margin-bottom: 3px;
+      align-items: center;
+  }
+  .store-name { 
+      margin-bottom: 0px; 
+      text-align: center;
+  }
+  .store-description { 
+      margin-bottom: 5px; /* تقليل الهامش */
+      margin-top: 2px; 
+      text-align: center;
+      line-height: 1.4;
+  }
+
+  /* قسم الإجراءات والأزرار (ترتيب أفقي مرن) */
+  .store-actions {
+    justify-content: flex-start;
+    gap: 4px;
+    margin-top: 5px; /* تقليل الهامش العلوي */
+    flex-wrap: nowrap; 
+    overflow-x: auto; 
+    padding-bottom: 0; 
+    margin-left: 0; 
+    margin-right: 0;
+    padding-left: 0; 
+    padding-right: 0;
+  }
+  
+  .store-actions span {
+    margin-bottom: 0; 
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 6px 8px; 
+    background-color: #f8f8f8; 
+    border-radius: 4px;
+    font-size: 12px; 
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .store-actions button {
+    flex-grow: 0; 
+    flex-shrink: 0;
+    padding: 6px 8px;
+    justify-content: center;
+    font-size: 11px;
+    white-space: nowrap;
+  }
+
+  /* تضييق المساحة الفارغة في القسم السفلي */
+  .second-row {
+    margin-top: 5px; /* تقليل الهامش العلوي الذي يسبب التباعد الكبير */
+    padding: 10px 0 0 0; /* تقليل الحشو حول المحتوى */
+  }
+
+  /* تنسيقات القسم الثاني على الجوال (Tabs) */
+  .tabs-container {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 5px; /* تقليل الحشو السفلي */
+    width: 100%;
+  }
+  
+  .tabs-right {
+      justify-content: space-around;
+      width: 100%;
+      gap: 0;
+  }
+
+  .tab-btn {
+      padding: 8px 5px;
+      font-size: 13px;
+      flex-grow: 1; 
+      text-align: center;
+  }
+
+  .tabs-content {
+    padding-top: 10px; /* تقليل الحشو العلوي لمحتوى التبويبات */
+  }
+
+  .actions-menu {
+    left: 50%;
+    transform: translateX(-50%);
+    top: auto;
+    right: auto;
+  }
+}
+
+.actions-menu.show {
+  display: block;
+}

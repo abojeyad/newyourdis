@@ -1,78 +1,125 @@
-/* ====== القائمة الجانبية ====== */
+.user-dropdown .user-dropdown-list li span {
+  color: #000; /* اجعل النص أسود */
+}
+
+.user-dropdown .user-dropdown-list li a {
+  color: #000; /* إذا كان هناك روابط داخل القائمة */
+  text-decoration: none; /* إزالة أي خط تحت النص */
+}
+
+/* شاشات الديسكتوب - الهامبرغر مخفي افتراضيًا */
+.menu-toggle {
+  display: none; /* نبدأ مخفية على الديسكتوب */
+}
+
+@media (max-width: 768px) {
+  .header-right,
+  .header-left {
+    display: none;
+  }
+
+  .search-box {
+    flex: 1;
+    max-width: 100%;
+  }
+
+  /* إظهار الهامبرغر على الجوال */
+  .menu-toggle {
+    display: flex;
+    font-size: 22px;
+    color: #333;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 6px;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* القائمة الجانبية الثابتة (sidebar) */
 .menu-section {
-  width: 200px;
+  width: 240px;
   background-color: #fff;
-  padding: 1px;
-  border-left: 1px solid #ddd;
-  overflow-y: hidden;
-  transition: width 0.3s ease;
-}
-
-/* عندما نريد إخفاء القائمة من العرض لكن تبقى في الـ DOM */
-.menu-section.hidden-menu {
-  display: none;
-}
-
-.menu-section:hover {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  box-shadow: -2px 0 8px rgba(0,0,0,0.1);
+  z-index: 1000;
+  padding: 16px 0;
   overflow-y: auto;
 }
 
-/* تصغير القائمة */
-.menu-collapsed,
-.menu-section.active {
-  width: 60px;
-}
-
-.menu-collapsed li span,
-.menu-section.active li span {
+/* تستخدم لإخفاء/إظهار القائمة عبر جافاسكريبت (مثلاً إضافة/إزالة الصنف) */
+.hidden-menu {
   display: none;
 }
 
-.menu-section.active ul {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+/* ===== تنسيقات روابط القائمة: نجعل النص والأيقونات باللون الأسود ===== */
 
-/* قائمة الأقسام داخل القائمة */
+/* رابط القائمة الرئيسي */
 .menu-section ul {
   list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0 12px;
 }
 
-.menu-section li {
-  padding: 10px 12px;
-  cursor: pointer;
+.menu-section ul li {
+  margin: 6px 0;
+}
+
+/* الرابط داخل القائمة: نص + أيقونة */
+.menu-section ul li a {
   display: flex;
   align-items: center;
-  color: #444;
-  font-size: 14px;
-  transition: background-color 0.2s ease;
+  gap: 10px;
+  padding: 10px 12px;
+  text-decoration: none;
+  color: #000 !important;           /* نضمن اللون الأسود */
+  font-size: 15px;
+  border-radius: 8px;
 }
 
-.menu-section li i {
-  margin-left: 8px;
-  margin-right: 10px;
-  color: #666;
+/* الأيقونة داخل الرابط */
+.menu-section ul li a i {
+  color: #000 !important;           /* أيقونات سوداء */
   min-width: 18px;
-  font-size: 20px;
-  text-align: center;
+  font-size: 18px;
 }
 
-.menu-section li:hover {
-  background-color: #f0f0f0;
+/* حالة المرور (hover) — تبقى سوداء */
+.menu-section ul li a:hover {
+  color: #000 !important;
+  background-color: rgba(0,0,0,0.03); /* تأثير خفيف دون تغيير اللون */
 }
 
-/* العنصر النشط */
-.menu-section li.active {
-  background-color: #f0f0f0;
-  font-weight: bold;
-  color: #000;
-  border-right: 3px solid #007bff;
+/* الحالة النشطة */
+.menu-section ul li.active a {
+  color: #000 !important;
+  font-weight: 600;
+  background-color: rgba(0,0,0,0.05);
+  border-right: 3px solid transparent; /* نحافظ على عدم ظهور ألوان زرقاء */
 }
 
-.menu-section li span {
-  font-size: 14px;
-  color: #333;
+/* إذا كانت هناك قاعدة تنقل استخدام حدود يمين ملونة (مثلاً user-dropdown استخدم border-right أزرق)، نمنع التداخل هنا */
+.menu-section ul li.active a {
+  border-right-color: transparent !important;
+}
+
+/* تأكد من أن النص الداخلي <span> يرث اللون الأسود */
+.menu-section ul li a span {
+  color: inherit !important;
+}
+
+/* دعم للوصول (visited / focus) */
+.menu-section ul li a:visited,
+.menu-section ul li a:focus {
+  color: #000 !important;
+  outline: none;
+}
+
+/* منع أي قواعد خارجية من تلوين النص */
+.menu-section,
+.menu-section * {
+  color: inherit;
 }

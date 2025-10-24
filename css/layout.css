@@ -1,12 +1,3 @@
-body {
-  font-family: 'Cairo', sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
-  direction: rtl;
-  margin: 0;
-  padding: 0;
-}
-
 .offers-title {
   font-weight: bold;
 }
