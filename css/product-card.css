@@ -9,6 +9,9 @@
   font-family: 'Cairo', sans-serif;
   position: relative;
   flex: 0 0 auto; /* يمنع تصغير عرض البطاقة */
+  cursor: pointer;
+}
+
 
 }
 
