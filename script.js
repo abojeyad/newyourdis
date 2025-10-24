@@ -93,6 +93,7 @@ const offersGroups = {
   group3:      makeGroup(desiredSizes.group3,      offsets.group3)
 };
 
+
 function createProductCard(product) {
   const card = document.createElement("div");
   card.classList.add("product-card");
@@ -117,8 +118,22 @@ function createProductCard(product) {
       اطلب الآن <i class="fas fa-external-link-alt"></i>
     </button>
   `;
+
+  // النقر على أي جزء من البطاقة يفتح product.html
+  card.addEventListener('click', () => {
+    window.location.href = 'product.html';
+  });
+
+  // النقر على زر "اطلب الآن" يفتح رابط خارجي في تاب جديد
+  const orderBtn = card.querySelector('.order-now-btn');
+  orderBtn.addEventListener('click', (event) => {
+    event.stopPropagation(); // يمنع النقر من فتح product.html
+    window.open('https://www.google.com', '_blank'); // رابط خارجي
+  });
+
   return card;
 }
+
 
 const offersContainer      = document.getElementById("offers");
 const storesContainer      = document.getElementById("stores");

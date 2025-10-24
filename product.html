@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>منصة يوردس</title>
+
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/product-page.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+
+  <style>
+    .username {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .username img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+
+<body>
+<header>
+
+  <div class="header-right">
+    <div class="username" id="userToggle" role="button" aria-haspopup="true" aria-expanded="false">
+      <img src="images/avatar.jpg" alt="صورة المستخدم">
+      <span>محمد أحمد</span>
+      <span class="user-arrow" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
+    </div>
+  </div>
+  
+  <div class="menu-toggle">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <div class="search-box">
+    <input type="text" placeholder="استكشف أفضل العروض.." />
+  </div>
+
+  <div class="header-left">
+    <div class="language-selector"> 🌐 English</div>
+    <div class="notifications">🔔 الإشعارات (10)</div>
+    <div class="messages">✉️ الرسائل (0)</div>
+    <div class="logo"><img src="logo.png" alt="شعار المنصة" /></div>
+  </div>
+
+</header>
+
+<main class="page-layout">
+  <aside class="menu-section hidden-menu" id="menu">
+    <ul>
+      <li class="active">
+        <a href="index.html" style="text-decoration:none; color:inherit; display:flex; align-items:center;">
+          <i class="fas fa-home"></i> <span>الرئيسية</span>
+        </a>
+      </li>
+      <li><i class="fas fa-store"></i> <span>متجري</span></li>
+      <li><i class="fas fa-bookmark"></i> <span>المفضلة</span></li>
+      <li><i class="fas fa-chart-line"></i> <span>الإحصائيات</span></li>
+      <li><i class="fas fa-cog"></i> <span>إعدادات المتجر</span></li>
+      <li><i class="fas fa-sign-out-alt"></i> <span>تسجيل خروج</span></li>
+    </ul>
+  </aside>
+
+
+<section class="myprod-page" dir="rtl">
+
+  <!-- العمود الأيسر: تعريف المنتج بصرياً ونصياً -->
+  <div class="myprod-left">
+    
+    <!-- الصورة الرئيسية -->
+    <div class="myprod-main-image">
+      <img src="images/products/image1.jpg" alt="هاتف ذكي سامسونج S23">
+    </div>
+
+    <!-- الصور المصغرة -->
+    <div class="myprod-thumbnails">
+      <img src="images/products/image1.jpg" class="active" alt="صورة 1">
+      <img src="images/products/image2.jpg" alt="صورة 2">
+      <img src="images/products/image3.jpg" alt="صورة 3">
+      <img src="images/products/image4.jpg" alt="صورة 4">
+      <img src="images/products/image5.jpg" alt="صورة 5">
+      <img src="images/products/image6.jpg" alt="صورة 6">
+      <img src="images/products/image7.jpg" alt="صورة 7">
+    </div>
+
+    <!-- اسم المنتج -->
+    <h2 class="myprod-title">هاتف ذكي سامسونج S23</h2>
+
+    <!-- الوصف المختصر -->
+    <p class="myprod-description">
+      هاتف ذكي بأحدث المواصفات، شاشة 6.8 بوصة، كاميرا 200MP ومعالج فائق السرعة. يضمن تجربة سلسة وعمر بطارية طويل.
+      <span class="myprod-show-more">عرض المزيد</span>
+    </p>
+
+    <!-- مسار التنقل / القسم -->
+    <p class="myprod-breadcrumb">
+      <span class="main-cat">الهواتف وملحقاتها</span> 
+      <i class="fas fa-chevron-left"></i> 
+      <span class="sub-cat">الهواتف الذكية</span>
+    </p>
+
+  </div>
+
+  <!-- العمود الأيمن: تحويل وإجراءات -->
+  <div class="myprod-right">
+
+    <!-- العد التنازلي للعرض -->
+    <div class="myprod-offer-timer">
+      <i class="fas fa-hourglass-half"></i> العرض ينتهى خلال <span>10:01:57:50</span>
+    </div>
+
+    <!-- الأسعار والخصم -->
+    <div class="myprod-pricing">
+      <span class="myprod-new-price">400 ريال</span>
+      <span class="myprod-discount-percentage">-20%</span>
+      <span class="myprod-old-price">500 ريال</span>
+    </div>
+
+    <!-- زر الطلب الآن -->
+    <button class="myprod-order-now-btn">
+      اطلب الآن <i class="fas fa-external-link-alt"></i>
+    </button>
+
+	<!-- معلومات المتجر -->
+	<div class="myprod-store-info">
+	  <h3 class="myprod-store-name">
+		العز للعود <span class="store-type">(متجر محلي يبعد 25km)</span>
+	  </h3>
+	  <img src="images/avatar.jpg" alt="صورة المتجر" class="myprod-store-avatar">
+	</div>
+
+
+    <!-- أيقونات الإجراءات -->
+    <div class="myprod-actions">
+      <button class="action-btn"><i class="far fa-heart"></i> المفضلة</button>
+      <button class="action-btn"><i class="far fa-envelope"></i> مراسلة</button>
+      <button class="action-btn"><i class="fas fa-share-alt"></i> مشاركة</button>
+      <button class="action-btn report-btn"><i class="fas fa-flag"></i> إبلاغ</button>
+      <button class="action-btn hide-btn"><i class="fas fa-eye-slash"></i> إخفاء</button>
+    </div>
+
+    <!-- إضافة تعليق والإحصائيات -->
+    <div class="myprod-comment-and-stats">
+      <div class="myprod-add-comment">
+        <i class="fas fa-plus"></i>
+        <span>إضافة تعليق</span>
+      </div>
+      <div class="myprod-inline-stats">
+        <span class="stat-item">(34 تعليق)</span>
+        <span class="stat-item">(654 مشاهدة)</span>
+      </div>
+    </div>
+
+    <!-- قسم التعليقات -->
+    <div class="myprod-comments-section no-header">
+      <div class="comment-list">
+        <div class="comment-item">
+          <div class="comment-meta">
+            <span class="comment-author">أحمد السعيد</span>
+            <span class="comment-time">منذ 3 ساعات</span>
+          </div>
+          <p class="comment-text">هاتف ممتاز! الكاميرا مذهلة والتصميم أنيق جداً، وصل في أقل من يومين بجودة عالية.</p>
+        </div>
+        <div class="comment-item">
+          <div class="comment-meta">
+            <span class="comment-author">سارة علي</span>
+            <span class="comment-time">بالأمس 11:45 صباحاً</span>
+          </div>
+          <p class="comment-text">كنت قلقة من الشراء عبر الإنترنت، لكن تجربة الشحن كانت سلسة والمنتج مطابق للوصف.</p>
+        </div>
+        <div class="comment-item">
+          <div class="comment-meta">
+            <span class="comment-author">خالد محمد</span>
+            <span class="comment-time">منذ أسبوعين</span>
+          </div>
+          <p class="comment-text">السعر جيد جداً مقابل الإمكانيات. استهلاك البطارية هو النقطة الوحيدة التي تحتاج لتحسين.</p>
+        </div>
+      </div>
+
+      <!-- زر نصي للتعليقات -->
+      <a href="#" class="show-all-comments-btn">عرض المزيد من التعليقات</a>
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+<script src="js/product-page.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
