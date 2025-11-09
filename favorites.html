@@ -9,6 +9,12 @@
   <link rel="stylesheet" href="css/menu.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/product-page.css">
+  <link rel="stylesheet" href="css/mystore.css">
+  <link rel="stylesheet" href="css/product-card.css">
+  <link rel="stylesheet" href="css/categoriespage.css">
+  <link rel="stylesheet" href="css/smartTable.css">
+  <link rel="stylesheet" href="css/citylist.css">
+  <link rel="stylesheet" href="css/login-popup.css">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
@@ -27,22 +33,45 @@
       border-radius: 50%;
       object-fit: cover;
     }
+	.second-row {
+    margin-top: 2px;
+    padding-top: 0; 
+  }
   </style>
+  
 </head>
 
 <body>
 
 <header>
 
+
 <div class="header-right">
-  <a href="index.html" title="تسجيل خروج" style="color:#000; margin-left: 10px; text-decoration:none;">
-    تسجيل خروج
-  </a>
-  <a href="file:///C:/Users/aljah/Desktop/yourdis/index.html" class="username" style="text-decoration:none; color:#000;">
-    العودة للصفحة الرئيسية
-  </a>
+  <a href="#" id="login-btn">تسجيل دخول</a>
+
+  <div id="user-buttons" style="display:none;">
+    <a href="index.html" title="تسجيل خروج">تسجيل خروج</a>
+    <a href="index.html" class="username">العودة للصفحة الرئيسية</a>
+  </div>
 </div>
 
+<div id="login-popup">
+  <h3>تسجيل الدخول</h3>
+  <input type="email" id="login-email" placeholder="أدخل بريدك الإلكتروني" value="test@example.com">
+  <button id="login-submit">تسجيل الدخول</button>
+</div>
+
+<div id="login-overlay"></div>
+
+<div id="logout-popup">
+  <h3>هل ترغب بتسجيل الخروج؟</h3>
+  <div class="logout-buttons">
+    <button id="logout-yes">نعم</button>
+    <button id="logout-no">لا</button>
+  </div>
+</div>
+
+<div id="logout-overlay"></div>
 
 
   
@@ -54,15 +83,42 @@
     <input type="text" placeholder="استكشف أفضل العروض.." />
   </div>
 
-	<div class="header-left">
-	  <a href="index.html" class="city">📍 مكة المكرمة</a>
-	  <a href="favorites.html" class="favorites">❤️ المفضلة</a>
-	  <div class="language-selector">🌐 English</div>
-	  <a href="notifications.html" class="notifications">🔔 الإشعارات (10)</a>
-	  <a href="messages.html" class="messages">✉️ الرسائل (0)</a>
-	  <a href="index.html" class="logo"><img src="logo.png" alt="شعار المنصة" /></a>
-	</div>
 
+<div class="header-left">
+  <a href="index.html" class="city">📍 مكة المكرمة</a>
+  <a href="favorites.html" class="favorites">❤️ المفضلة</a>
+  <div class="language-selector">🌐 English</div>
+  <a href="notifications.html" class="notifications">🔔 الإشعارات (10)</a>
+  <a href="messages.html" class="messages">✉️ الرسائل (0)</a>
+  <a href="index.html" class="logo"><img src="logo.png" alt="شعار المنصة" /></a>
+</div>
+
+<!-- Popup المدن -->
+<div id="city-popup">
+  <h3>المملكة العربية السعودية</h3>
+  <ul>
+    <li class="city-option">مكة المكرمة</li>
+    <li class="city-option">الرياض</li>
+    <li class="city-option">جدة</li>
+    <li class="city-option">المدينة</li>
+    <li class="city-option">الدمام</li>
+    <li class="city-option">الخبر</li>
+  </ul>
+</div>
+
+<div id="popup-overlay"></div>
+
+<!-- نافذة اختيار اللغة -->
+<div id="language-popup">
+  <h3>تغيير اللغة</h3>
+  <ul>
+    <li class="language-option">عربي</li>
+    <li class="language-option">English</li>
+  </ul>
+</div>
+
+<!-- Overlay لتغيير اللغة -->
+<div id="language-overlay"></div>
 
 
 </header>
@@ -87,15 +143,43 @@
 </aside>
 
 
-<section class="myprod-page" dir="rtl">
+<div class="container">
 
 
-</section>
+    <div class="second-row">
+      <div class="tabs-container">
+        <div class="tabs-right">
+          <button class="tab-btn active" data-tab="offers-tab">العروض المفضلة</button>
+          <button class="tab-btn" data-tab="products-tab">المنتجات المفضلة</button>
+        </div>
+      </div>
+
+      <div class="tabs-content">
+        <div id="offers-tab" class="tab-content active">
+          <div class="group4 offers-grid"></div>
+        </div>
+        <div id="products-tab" class="tab-content">
+          <div class="group4 offers-grid"></div>
+        </div>
+        <div id="expired-tab" class="tab-content">
+          <div id="expired-table-container"></div>
+        </div>
+      </div>
+
+    </div>
+
+</div>
 
 
 
 
 <script src="js/product-page.js"></script>
 <script src="script.js"></script>
+<script src="smartTable.js"></script>
+<script src="mystore.js"></script>
+<script src="categories.js"></script>
+<script src="citylist.js"></script>
+<script src="login-toggle.js"></script>
+
 </body>
 </html>

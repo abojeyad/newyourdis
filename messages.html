@@ -9,6 +9,10 @@
   <link rel="stylesheet" href="css/menu.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/product-page.css">
+  <link rel="stylesheet" href="css/mystore.css">
+  <link rel="stylesheet" href="css/product-card.css">
+  <link rel="stylesheet" href="css/categoriespage.css">
+  <link rel="stylesheet" href="css/smartTable.css">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
@@ -27,6 +31,139 @@
       border-radius: 50%;
       object-fit: cover;
     }
+	
+
+/* العنوان الرئيسي */
+.notifications-heading {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* الحاوية الرئيسية */
+.notifications-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  padding: 15px;
+}
+
+/* الحاوية الرئيسية للرسائل */
+.messages-wrapper {
+  display: flex;
+  gap: 15px;
+}
+
+/* قائمة المحادثات على اليمين */
+.chat-list {
+  width: 35%;
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-right: 1px solid #eee;
+  overflow-y: auto;
+  max-height: 500px;
+  border-radius: 6px;
+}
+
+.chat-item {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s;
+}
+
+.chat-item:last-child {
+  border-bottom: none;
+}
+
+.chat-item:hover {
+  background-color: #ececec;
+}
+
+.chat-item img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+.chat-item div p {
+  margin: 0;
+}
+
+.chat-item div p:first-child {
+  font-weight: bold;
+}
+
+.chat-item div p:last-child {
+  font-size: 12px;
+  color: #777;
+}
+
+/* محتوى الشات على اليسار */
+.chat-content {
+  flex: 1;
+  background-color: #fff;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 500px;
+  overflow-y: auto;
+  border-radius: 6px;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
+}
+
+/* الرسائل المستلمة */
+.message.received {
+  align-self: flex-start;
+  background-color: #f1f0f0;
+  padding: 8px 12px;
+  border-radius: 12px;
+  max-width: 70%;
+}
+
+/* الرسائل المرسلة */
+.message.sent {
+  align-self: flex-end;
+  background-color: #d1e7dd;
+  padding: 8px 12px;
+  border-radius: 12px;
+  max-width: 70%;
+}
+
+/* تمرير سلس */
+.chat-list, .chat-content {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0,0,0,0.2) transparent;
+}
+
+.chat-list::-webkit-scrollbar,
+.chat-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-list::-webkit-scrollbar-thumb,
+.chat-content::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 3px;
+}
+
+/* إبراز المحادثة النشطة */
+.chat-item.active {
+  background-color: #ffffff;
+  border-right: 4px solid #339af0;
+}
+
+
+
   </style>
 </head>
 
@@ -38,12 +175,10 @@
   <a href="index.html" title="تسجيل خروج" style="color:#000; margin-left: 10px; text-decoration:none;">
     تسجيل خروج
   </a>
-  <a href="file:///C:/Users/aljah/Desktop/yourdis/index.html" class="username" style="text-decoration:none; color:#000;">
+  <a href="index.html" class="username" style="text-decoration:none; color:#000;">
     العودة للصفحة الرئيسية
   </a>
 </div>
-
-
 
   
   <div class="menu-toggle">
@@ -62,8 +197,6 @@
 	  <a href="messages.html" class="messages">✉️ الرسائل (0)</a>
 	  <a href="index.html" class="logo"><img src="logo.png" alt="شعار المنصة" /></a>
 	</div>
-
-
 
 </header>
 
@@ -87,15 +220,81 @@
 </aside>
 
 
-<section class="myprod-page" dir="rtl">
 
+<div class="notifications-container">
+  <h2 class="notifications-heading">الرسائل</h2>
 
-</section>
+  <div class="messages-wrapper">
+    
+    <!-- قائمة المحادثات على اليمين -->
+    <div class="chat-list">
+      <div class="chat-item">
+        <img src="images/avatar.jpg" alt="Avatar">
+        <div>
+          <p>محمد أحمد</p>
+          <p>آخر رسالة: صباح الخير!</p>
+        </div>
+      </div>
 
+      <div class="chat-item">
+        <img src="images/avatar.jpg" alt="Avatar">
+        <div>
+          <p>سارة علي</p>
+          <p>آخر رسالة: شكراً على التوضيح</p>
+        </div>
+      </div>
+
+      <div class="chat-item active">
+        <img src="images/avatar.jpg" alt="Avatar">
+        <div>
+          <p>علي حسن</p>
+          <p>آخر رسالة: هل أرسلت الفاتورة؟</p>
+        </div>
+      </div>
+
+      <div class="chat-item">
+        <img src="images/avatar.jpg" alt="Avatar">
+        <div>
+          <p>ليلى محمد</p>
+          <p>آخر رسالة: استلمت الرسالة</p>
+        </div>
+      </div>
+
+      <div class="chat-item">
+        <img src="images/avatar.jpg" alt="Avatar">
+        <div>
+          <p>أحمد سعيد</p>
+          <p>آخر رسالة: شكراً على الرد!</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- محتوى الشات على اليسار -->
+    <div class="chat-content">
+      <div class="message received">
+        مرحباً! كيف حالك اليوم؟
+      </div>
+      <div class="message sent">
+        الحمد لله، بخير! وأنت؟
+      </div>
+      <div class="message received">
+        بخير، شكراً لسؤالك!
+      </div>
+      <div class="message sent">
+        ممتاز، هل تريد مناقشة العرض الجديد؟
+      </div>
+    </div>
+
+  </div>
+</div>
 
 
 
 <script src="js/product-page.js"></script>
 <script src="script.js"></script>
+<script src="smartTable.js"></script>
+<script src="mystore.js"></script>
+<script src="categories.js"></script>
+
 </body>
 </html>

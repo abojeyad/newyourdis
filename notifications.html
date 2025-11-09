@@ -9,6 +9,10 @@
   <link rel="stylesheet" href="css/menu.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/product-page.css">
+  <link rel="stylesheet" href="css/mystore.css">
+  <link rel="stylesheet" href="css/product-card.css">
+  <link rel="stylesheet" href="css/categoriespage.css">
+  <link rel="stylesheet" href="css/smartTable.css">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
@@ -27,6 +31,77 @@
       border-radius: 50%;
       object-fit: cover;
     }
+	
+	
+	
+
+/* العنوان الرئيسي */
+.notifications-heading {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* الحاوية الرئيسية */
+.notifications-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  padding: 15px;
+}
+
+
+
+.notification {
+  display: flex;
+  border-bottom: 1px solid #eee;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.notification:last-child {
+  border-bottom: none;
+}
+
+.avatar {
+  width: 35px; 
+  height: 35px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.notification-content {
+  flex: 1;
+}
+
+.notification-title {
+  font-weight: bold;
+  margin: 0;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.notification-description {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.notification-date {
+  font-size: 12px;
+  color: #999;
+  margin-left: 10px;
+  white-space: nowrap;
+}
+
+
   </style>
 </head>
 
@@ -38,12 +113,10 @@
   <a href="index.html" title="تسجيل خروج" style="color:#000; margin-left: 10px; text-decoration:none;">
     تسجيل خروج
   </a>
-  <a href="file:///C:/Users/aljah/Desktop/yourdis/index.html" class="username" style="text-decoration:none; color:#000;">
+  <a href="index.html" class="username" style="text-decoration:none; color:#000;">
     العودة للصفحة الرئيسية
   </a>
 </div>
-
-
 
   
   <div class="menu-toggle">
@@ -62,8 +135,6 @@
 	  <a href="messages.html" class="messages">✉️ الرسائل (0)</a>
 	  <a href="index.html" class="logo"><img src="logo.png" alt="شعار المنصة" /></a>
 	</div>
-
-
 
 </header>
 
@@ -87,15 +158,49 @@
 </aside>
 
 
-<section class="myprod-page" dir="rtl">
 
+<div class="notifications-container">
+  <h2 class="notifications-heading">الإشعارات</h2>
 
-</section>
+  <div class="notification">
+    <img src="images/avatar.jpg" alt="Avatar" class="avatar">
+    <div class="notification-content">
+      <p class="notification-title">
+        اشعار تجريبي 1
+        <span class="notification-date">قبل يومين</span>
+      </p>
+      <p class="notification-description">هذا وصف قصير للإشعار لتوضيح الفكرة.</p>
+    </div>
+  </div>
 
+  <div class="notification">
+    <img src="images/avatar.jpg" alt="Avatar" class="avatar">
+    <div class="notification-content">
+      <p class="notification-title">
+        اشعار تجريبي 2
+        <span class="notification-date">قبل 5 ساعات</span>
+      </p>
+      <p class="notification-description">وصف قصير آخر هنا لتوضيح شكل الإشعارات.</p>
+    </div>
+  </div>
 
-
+  <div class="notification">
+    <img src="images/avatar.jpg" alt="Avatar" class="avatar">
+    <div class="notification-content">
+      <p class="notification-title">
+        اشعار تجريبي 3
+        <span class="notification-date">قبل أسبوع</span>
+      </p>
+      <p class="notification-description">يمكن إضافة أكثر من إشعار بهذا الشكل.</p>
+    </div>
+  </div>
+</div>
 
 <script src="js/product-page.js"></script>
 <script src="script.js"></script>
+<script src="smartTable.js"></script>
+<script src="mystore.js"></script>
+<script src="categories.js"></script>
+
 </body>
 </html>
