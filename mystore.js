@@ -39,3 +39,25 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
 });
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const expiredData = [
+    { "المنتج": "قلم حبر", "السعر": "15 ريال", "الكمية": 50 },
+    { "المنتج": "دفتر", "السعر": "10 ريال", "الكمية": 100 },
+    { "المنتج": "مسطرة", "السعر": "5 ريال", "الكمية": 75 }
+  ];
+
+  const tableSettings = {
+    containerId: "expired-table-container", // معرف الحاوية
+    data: expiredData,
+    filters: true,         // تفعيل البحث في كل عمود
+    showTotals: true,      // إظهار المجاميع أسفل الجدول
+    showButton: true,      // إظهار زر العمود الأخير
+    buttonText: "تعديل"    // اسم الزر في العمود الأخير
+  };
+
+  // إنشاء الجدول
+  const table = createSmartTable(tableSettings);
+});

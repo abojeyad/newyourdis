@@ -33,13 +33,17 @@
 <body>
 <header>
 
-  <div class="header-right">
-    <div class="username" id="userToggle" role="button" aria-haspopup="true" aria-expanded="false">
-      <img src="images/avatar.jpg" alt="صورة المستخدم">
-      <span>محمد أحمد</span>
-      <span class="user-arrow" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
-    </div>
-  </div>
+<div class="header-right">
+  <a href="index.html" title="تسجيل خروج" style="color:#000; margin-left: 10px; text-decoration:none;">
+    تسجيل خروج
+  </a>
+  <a href="file:///C:/Users/aljah/Desktop/yourdis/index.html" class="username" style="text-decoration:none; color:#000;">
+    العودة للصفحة الرئيسية
+  </a>
+</div>
+
+
+
   
   <div class="menu-toggle">
     <i class="fas fa-bars"></i>
@@ -49,38 +53,37 @@
     <input type="text" placeholder="استكشف أفضل العروض.." />
   </div>
 
-  <div class="header-left">
-    <div class="language-selector"> 🌐 English</div>
-    <div class="notifications">🔔 الإشعارات (10)</div>
-    <div class="messages">✉️ الرسائل (0)</div>
-    <div class="logo"><img src="logo.png" alt="شعار المنصة" /></div>
-  </div>
+	<div class="header-left">
+	  <a href="index.html" class="city">📍 مكة المكرمة</a>
+	  <a href="favorites.html" class="favorites">❤️ المفضلة</a>
+	  <div class="language-selector">🌐 English</div>
+	  <a href="notifications.html" class="notifications">🔔 الإشعارات (10)</a>
+	  <a href="messages.html" class="messages">✉️ الرسائل (0)</a>
+	  <a href="index.html" class="logo"><img src="logo.png" alt="شعار المنصة" /></a>
+	</div>
+
+
 
 </header>
 
   <main class="page-layout">
-	  <aside class="menu-section hidden-menu" id="menu">
-	  <ul>
-		<li class="active">
-		  <a href="index.html"><i class="fas fa-home"></i> <span>الرئيسية</span></a>
-		</li>
-		<li>
-		  <a href="mystore.html"><i class="fas fa-store"></i> <span>متجري</span></a>
-		</li>
-		<li>
-		  <a href="favorites.html"><i class="fas fa-bookmark"></i> <span>المفضلة</span></a>
-		</li>
-		<li>
-		  <a href="stats.html"><i class="fas fa-chart-line"></i> <span>الإحصائيات</span></a>
-		</li>
-		<li>
-		  <a href="settings.html"><i class="fas fa-cog"></i> <span>إعدادات المتجر</span></a>
-		</li>
-		<li>
-		  <a href="index.html"><i class="fas fa-sign-out-alt"></i> <span>تسجيل خروج</span></a>
-		</li>
-	  </ul>
-	</aside>
+  
+  <aside class="menu-section hidden-menu" id="menu">
+  <ul>
+    <li class="active">
+      <a href="index.html"><i class="fas fa-home"></i> <span>الرئيسية</span></a>
+    </li>
+    <li>
+      <a href="mystore.html"><i class="fas fa-store"></i> <span>متجري</span></a>
+    </li>
+    <li>
+      <a href="settings.html"><i class="fas fa-cog"></i> <span>إعدادات المتجر</span></a>
+    </li>
+    <li>
+      <a href="index.html"><i class="fas fa-sign-out-alt"></i> <span>تسجيل خروج</span></a>
+    </li>
+  </ul>
+</aside>
 
 <section class="myprod-page" dir="rtl">
 
