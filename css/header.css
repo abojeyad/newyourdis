@@ -12,10 +12,18 @@ body {
   direction: rtl;
 }
 
+/* الروابط العامة */
+.header-left a,
+.header-right a {
+  text-decoration: none;
+  color: inherit;
+}
 
-.header-left a {
-  text-decoration: none; /* إزالة الخط الافتراضي */
-  color: inherit;         /* الحفاظ على لون النص الحالي */
+/* ترتيب زر تسجيل الخروج و الدخول لمتجري */
+#user-buttons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
 }
 
 /* ====== Header ====== */
@@ -28,8 +36,6 @@ header {
   justify-content: space-between;
   flex-wrap: wrap;
   border-bottom: 1px solid #ddd;
-
-  /* التعديل لتثبيت الهيدر */
   position: sticky; /* أو fixed */
   top: 0;
   z-index: 1000; /* ليكون فوق كل العناصر */
@@ -42,12 +48,11 @@ header {
   gap: 16px;
 }
 
-/* (تم حذف عرض أيقونة الهامبرغر من الHTML، لكن نحتفظ بأي قواعد محتملة غير مستخدمة) */
+/* أيقونة الهامبرغر (غير مستخدمة) */
 .header-right .menu-toggle {
-  display: none; /* لم تعد مستخدمة — نضمن اختفائها */
+  display: none; /* لم تعد مستخدمة */
 }
 
-/* أيقونة الهامبرغر (غير مستخدمة) */
 /* .header-right .menu-toggle {
   font-size: 20px;
   color: #555;
@@ -64,6 +69,7 @@ header {
   background-color: #f0f0f0;
 } */
 
+/* عناصر الهيدر الأخرى */
 .language-selector,
 .notifications,
 .messages,
@@ -92,7 +98,21 @@ header {
   height: auto;
 }
 
-/* اسم المستخدم: قابل للنقر */
+/* ====== زر تسجيل الدخول في الهيدر ====== */
+#login-btn {
+  background-color: #8B4513; /* اللون العودي */
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+#login-btn:hover {
+  background-color: #A0522D; /* لون أفتح عند hover */
+}
+
+/* ====== اسم المستخدم ====== */
 .username {
   cursor: pointer;
   padding: 6px 8px;
@@ -102,6 +122,7 @@ header {
   align-items: center;
   gap: 8px;
 }
+
 .username:hover {
   background-color: #f0f0f0;
 }
@@ -116,12 +137,11 @@ header {
   color: #666;
 }
 
-/* دوران السهم عند توسيع القائمة — يعتمد على aria-expanded على العنصر */
 .username[aria-expanded="true"] .user-arrow {
   transform: rotate(180deg);
 }
 
-/* ===== صندوق القائمة المنسدلة داخل الهيدر ===== */
+/* ====== صندوق القائمة المنسدلة داخل الهيدر ====== */
 .user-dropdown {
   position: absolute;
   top: calc(100% + 6px);
@@ -142,12 +162,12 @@ header {
   display: block;
 }
 
-/* نمط القائمة المستنسخة داخل المنسدلة */
 .user-dropdown .user-dropdown-list {
   list-style: none;
   margin: 0;
   padding: 8px 0;
 }
+
 .user-dropdown .user-dropdown-list li {
   padding: 10px 14px;
   display: flex;
@@ -157,6 +177,7 @@ header {
   font-size: 14px;
   color: #333;
 }
+
 .user-dropdown .user-dropdown-list li i {
   margin-left: 8px;
   margin-right: 0;
@@ -164,12 +185,15 @@ header {
   color: #666;
   min-width: 18px;
 }
+
 .user-dropdown .user-dropdown-list li:hover {
   background: #f7f7f7;
 }
+
 .user-dropdown .user-dropdown-list li span {
   display: inline-block;
 }
+
 .user-dropdown .user-dropdown-list li.active {
   background-color: #f0f0f0;
   font-weight: bold;
@@ -177,6 +201,7 @@ header {
   border-right: 3px solid #007bff;
 }
 
+/* ====== Media Queries ====== */
 @media (max-width: 768px) {
   .header-right,
   .header-left {
