@@ -1,0 +1,49 @@
+/* smartTable.css */
+.smart-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Cairo', sans-serif;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.smart-table th, .smart-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.smart-table thead th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.smart-table thead tr:nth-child(2) th input {
+  width: 90%;
+  padding: 4px 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.smart-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+.smart-table tfoot td.total-cell {
+  font-weight: bold;
+  background-color: #f0f0f0;
+}
+
+.smart-table button.row-btn {
+  padding: 5px 10px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.smart-table button.row-btn:hover {
+  background-color: #0056b3;
+}

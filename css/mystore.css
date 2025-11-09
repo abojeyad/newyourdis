@@ -7,12 +7,13 @@ html, body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Cairo', sans-serif;
 }
 
 .container {
   width: 100%;
-  margin: 0;
-  padding: 0 15px 10px 15px;
+  margin: 0 auto;
+  padding: 15px;
   background-color: #fff;
   border-radius: 0;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
@@ -31,6 +32,7 @@ html, body {
   border-bottom: 1px solid #eee;
   justify-content: flex-start;
   align-items: flex-start;
+  padding-bottom: 10px;
 }
 
 .row img {
@@ -45,50 +47,47 @@ html, body {
 .store-info {
   flex-grow: 1;
   text-align: right;
-  padding-top: 0; 
 }
 
 .store-header {
     display: flex;
-    align-items: center; 
+    justify-content: space-between;
+    align-items: flex-start; 
     gap: 8px; 
-    margin-bottom: -4px;
+    margin-bottom: 8px;
+}
+
+.store-name-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
 }
 
 .store-name {
   font-size: 18px; 
   font-weight: bold;
   color: #333;
-  line-height: 1;
-  margin-bottom: 0;
-  flex-shrink: 0;
+  line-height: 1.2;
 }
 
 .store-meta {
   display: flex;
   align-items: center;
   gap: 8px; 
-}
-.store-meta .username {
   font-size: 13px;
   color: #007bff;
-  font-weight: 500;
-  line-height: 1;
 }
+
 .store-meta .type-tag {
   font-size: 12px;
   color: #6c757d;
-  font-weight: normal;
-  line-height: 1;
 }
 
 .store-description {
   font-size: 14px; 
   color: #333;
-  line-height: 1;
-  margin-top: 2px;
-  margin-bottom: -3px; 
-  padding-bottom: 0px;
+  line-height: 1.4;
+  margin-bottom: 5px;
 }
 
 .store-actions {
@@ -96,19 +95,21 @@ html, body {
   flex-wrap: wrap;
   align-items: center;
   gap: 5px; 
-  margin-top: 0px; 
-  justify-content: flex-start;
+  margin-top: 5px; 
 }
 
 .store-actions span {
   font-size: 13px; 
   font-weight: 600;
   color: #555;
-  padding: 3px 0; 
+  padding: 3px 8px; 
   display: flex;
   align-items: center;
   gap: 3px; 
+  background-color: #f8f8f8;
+  border-radius: 4px;
 }
+
 .store-actions span::before {
     content: "\f004";
     font-family: "Font Awesome 5 Free";
@@ -123,7 +124,6 @@ html, body {
   font-size: 12px; 
   cursor: pointer;
   transition: background-color 0.2s;
-  font-family: 'Cairo', sans-serif;
   display: flex;
   align-items: center;
 }
@@ -142,7 +142,7 @@ html, body {
   background-color: #4e3518;
 }
 
-.message, .share, .report, .block {
+.message, .share {
   background-color: #f0f0f0;
   color: #333;
 }
@@ -158,6 +158,85 @@ html, body {
   background-color: #ffc8c8;
 }
 
+/* زر اعدادت المتجر والإجراءات */
+.actions-left {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.actions-btn {
+  background-color: #654321;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.actions-btn i {
+  margin-right: 5px;
+}
+
+.actions-menu {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  list-style: none;
+  padding: 6px 0;
+  margin: 5px 0 0 0;
+  z-index: 20;
+  min-width: 150px;
+  text-align: right; 
+}
+
+.actions-menu li {
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.2s;
+}
+
+.actions-menu li:hover {
+  background-color: #f8f8f8;
+}
+
+.actions-menu.show {
+  display: block;
+}
+
+.settings-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  margin-left: 5px; 
+  text-decoration: none;
+}
+
+.settings-btn i {
+  margin-right: 5px;
+}
+
+.settings-btn:hover {
+  background-color: #0056b3;
+}
+
+
 /*
 ========================================
 3. تنسيقات القسم الثاني: Tabs والإجراءات
@@ -166,7 +245,7 @@ html, body {
 .second-row {
   width: 100%;
   margin-top: 15px;
-  padding: 15px;
+  padding: 15px 0 0 0;
 }
 
 .tabs-container {
@@ -203,54 +282,6 @@ html, body {
   border-bottom: 2px solid #654321;
 }
 
-.actions-left {
-  position: relative;
-}
-
-.actions-btn {
-  background-color: #654321;
-  color: #fff;
-  border: none;
-  padding: 6px 12px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 13px;
-  font-weight: 600;
-}
-
-.actions-btn i {
-  margin-right: 5px;
-}
-
-.actions-menu {
-  display: none;
-  position: absolute;
-  left: 0;
-  top: 100%;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  list-style: none;
-  padding: 6px 0;
-  margin: 5px 0 0 0;
-  z-index: 20;
-  min-width: 150px;
-  text-align: right; 
-}
-
-.actions-menu li {
-  padding: 8px 12px;
-  cursor: pointer;
-  font-size: 13px;
-  transition: 0.2s;
-  text-align: right; 
-}
-
-.actions-menu li:hover {
-  background-color: #f8f8f8;
-}
-
 .tabs-content {
   padding-top: 15px;
 }
@@ -272,133 +303,74 @@ html, body {
 
 /*
 ========================================
-4. التجاوب مع شاشات الجوال (Media Queries)
+4. التجاوب مع شاشات الجوال
 ========================================
 */
 @media (max-width: 600px) {
   
-  .container {
-    padding: 10px;
-  }
-
-  /* تنسيق شبكة العروض */
-  .offers-grid {
-    width: 100%;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 12px;
-  }
-  
-  /* إخفاء زر الإجراءات تماماً */
-  .actions-left {
-    display: none; 
-  }
-  
-  /* تضييق المساحة الفارغة في القسم العلوي */
   .row {
     flex-direction: column;
     align-items: center;
-    padding-bottom: 5px; /* تقليل الحشو السفلي في الصف */
+    padding-bottom: 5px;
   }
 
   .store-info {
     width: 100%;
     text-align: center;
-    padding-bottom: 0;
   }
-  
-  /* تضييق المسافات بين عناصر معلومات المتجر */
+
   .store-header {
       flex-direction: column;
-      gap: 0px; /* تقليل الفراغ */
-      margin-bottom: 3px;
       align-items: center;
-  }
-  .store-name { 
-      margin-bottom: 0px; 
-      text-align: center;
-  }
-  .store-description { 
-      margin-bottom: 5px; /* تقليل الهامش */
-      margin-top: 2px; 
-      text-align: center;
-      line-height: 1.4;
+      gap: 5px;
   }
 
-  /* قسم الإجراءات والأزرار (ترتيب أفقي مرن) */
+  .actions-left {
+    position: relative;
+    margin-top: 5px;
+  }
+
   .store-actions {
-    justify-content: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 4px;
-    margin-top: 5px; /* تقليل الهامش العلوي */
-    flex-wrap: nowrap; 
-    overflow-x: auto; 
-    padding-bottom: 0; 
-    margin-left: 0; 
-    margin-right: 0;
-    padding-left: 0; 
-    padding-right: 0;
   }
-  
-  .store-actions span {
-    margin-bottom: 0; 
-    justify-content: center;
-    flex-shrink: 0;
-    padding: 6px 8px; 
-    background-color: #f8f8f8; 
-    border-radius: 4px;
-    font-size: 12px; 
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .store-actions button {
-    flex-grow: 0; 
-    flex-shrink: 0;
-    padding: 6px 8px;
-    justify-content: center;
+
+  .store-actions span, .store-actions button {
     font-size: 11px;
-    white-space: nowrap;
+    padding: 5px 8px;
   }
 
-  /* تضييق المساحة الفارغة في القسم السفلي */
   .second-row {
-    margin-top: 5px; /* تقليل الهامش العلوي الذي يسبب التباعد الكبير */
-    padding: 10px 0 0 0; /* تقليل الحشو حول المحتوى */
+    margin-top: 10px;
+    padding: 10px;
   }
 
-  /* تنسيقات القسم الثاني على الجوال (Tabs) */
   .tabs-container {
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: column;
     align-items: center;
-    padding-bottom: 5px; /* تقليل الحشو السفلي */
-    width: 100%;
+    gap: 5px;
   }
-  
+
   .tabs-right {
-      justify-content: space-around;
-      width: 100%;
-      gap: 0;
+    justify-content: center;
+    width: 100%;
+    gap: 5px;
   }
 
   .tab-btn {
-      padding: 8px 5px;
-      font-size: 13px;
-      flex-grow: 1; 
-      text-align: center;
+    padding: 8px 5px;
+    font-size: 13px;
+    flex-grow: 1; 
+    text-align: center;
   }
 
   .tabs-content {
-    padding-top: 10px; /* تقليل الحشو العلوي لمحتوى التبويبات */
+    padding-top: 10px;
   }
 
   .actions-menu {
     left: 50%;
     transform: translateX(-50%);
-    top: auto;
-    right: auto;
   }
-}
-
-.actions-menu.show {
-  display: block;
 }

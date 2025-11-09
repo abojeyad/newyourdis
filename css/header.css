@@ -12,6 +12,12 @@ body {
   direction: rtl;
 }
 
+
+.header-left a {
+  text-decoration: none; /* إزالة الخط الافتراضي */
+  color: inherit;         /* الحفاظ على لون النص الحالي */
+}
+
 /* ====== Header ====== */
 header {
   background-color: #f7f7f7;
