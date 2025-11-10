@@ -1,0 +1,102 @@
+/* ===== الفئات الفرعية (Subcategories) ===== */
+.subcategories-bar {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 10px 15px;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 12px;
+}
+
+/* زر الفئات */
+.subcat {
+  flex-shrink: 0;
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  background: #f7f7f7;
+  font-family: 'Cairo', sans-serif;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+.subcat:hover { background: #f0f0f0; }
+.subcat.active { background: #FF9800; color: #fff; }
+
+/* ===== الأسفل: الفلاتر + المنتجات ===== */
+.content-bottom {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+}
+
+/* لوحة الفلاتر (يمين) */
+.filters-panel {
+  width: 220px;
+  border-left: 2px solid #FF9800;
+}
+
+
+/* شبكة العروض (المنتجات) */
+.offers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ===== متفرقات: أحجام أصغر للجوال ===== */
+@media (max-width: 768px) {
+  .content-bottom {
+    flex-direction: column;
+  }
+  .filters-panel {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+  .offers-grid {
+    width: 100%;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .subcat { font-size: 13px; padding: 7px 12px; }
+
+  /* إخفاء الفلاتر في الجوال */
+  .filters-panel {
+    display: none;
+  }
+}
+
+/* تنسيق الفلاتر */
+.filters-panel h3 {
+  margin-top: 0;
+  color: #FF9800;
+  font-size: 18px;
+  border-bottom: 2px solid #FF9800;
+  padding-bottom: 6px;
+}
+
+.filter-group { margin-top: 14px; }
+.filter-group h4 { font-size: 15px; color: #333; margin-bottom: 6px; }
+.filter-group label {
+  display: block;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+.filter-group input[type="radio"],
+.filter-group input[type="checkbox"] {
+  accent-color: #FF9800;
+  margin-left: 6px;
+}
