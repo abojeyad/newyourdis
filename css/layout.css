@@ -6,17 +6,19 @@ html, body {
   flex-direction: column;
   min-height: 100vh;
   font-family: 'Cairo', sans-serif;
+  padding-top: 30px; /* مساحة للهيدر الثابت */
+  box-sizing: border-box;
 }
 
 main {
-  flex: 1; /* يأخذ كل المساحة المتبقية بين الهيدر والفوتر */
+  flex: 1;
 }
 
 .offers-title {
   font-weight: bold;
 }
 
-/* ====== تخطيط الصفحة ====== */
+/* تخطيط الصفحة */
 .page-layout {
   display: flex;
   margin: 0;
@@ -24,12 +26,13 @@ main {
   gap: 0;
 }
 
-/* ====== القسم الأوسط ====== */
+/* القسم الأوسط */
 .main-content {
   flex: 1;
   background-color: #fff;
   padding: 16px;
   overflow-y: auto;
+  box-sizing: border-box; /* لتجنب مشاكل العرض */
 }
 
 /* إزالة المسافات بين جميع العناصر */
@@ -38,36 +41,32 @@ header, .page-layout, .main-content, .filters-section {
 }
 
 /* شبكة العروض */
-/* شبكة العروض */
 .offers-grid {
   display: flex;
-  flex-wrap: nowrap;          /* كل البطاقات في صف واحد */
+  flex-wrap: nowrap;
   gap: 12px;
   justify-content: flex-start;
-  overflow-x: auto;           /* يسمح بالتمدد الأفقي */
+  overflow-x: auto;
   overflow-y: hidden;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;      /* إخفاء شريط التمرير */
-  -ms-overflow-style: none;
+  scrollbar-width: none;
   padding-bottom: 20px;
   width: 100%;
 }
 
-/* إخفاء شريط التمرير في كروم وسفاري */
 .offers-grid::-webkit-scrollbar {
   display: none;
 }
 
 .offers-selected-grid {
   display: flex;
-  flex-wrap: wrap;         /* يسمح بانتقال العناصر للسطر الثاني */
+  flex-wrap: wrap;
   gap: 12px;
   padding-bottom: 20px;
   width: 100%;
-  justify-content: flex-start; /* اختياري، لترتيب العناصر من اليمين */
+  justify-content: flex-start;
 }
-
 
 /* زر عرض الكل */
 .section-header {
@@ -84,8 +83,8 @@ header, .page-layout, .main-content, .filters-section {
 
 .section-header .view-all {
   font-size: 14px;
-  color: #333; /* لون النص */
-  background-color: #f0f0f0; /* خلفية رمادية فاتحة */
+  color: #333;
+  background-color: #f0f0f0;
   padding: 4px 10px;
   border-radius: 6px;
   text-decoration: none;
@@ -96,8 +95,8 @@ header, .page-layout, .main-content, .filters-section {
 }
 
 .section-header .view-all:hover {
-  background-color: #e0e0e0; /* لون أغمق قليلًا عند المرور */
-  color: #007bff; /* تغيير لون النص عند المرور */
+  background-color: #e0e0e0;
+  color: #007bff;
 }
 
 .section-header .view-all i {

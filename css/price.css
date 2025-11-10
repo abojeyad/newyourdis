@@ -1,18 +1,11 @@
-/* price.css */
 
-/* التنسيق الأساسي للخط الذي تم ربطه في HTML */
-body {
-    font-family: 'Cairo', sans-serif;
-}
 
-/* نمط الشريط الجانبي "موصى بها" (ribbon) */
 .ribbon {
     position: absolute;
     top: -10px;
     left: -40px;
     transform: rotate(-45deg);
-    /* ألوان الخلفية المخصصة */
-    background: linear-gradient(90deg, #ff7a18, #af002d); 
+    background: linear-gradient(90deg, #ff7a18, #af002d);
     color: white;
     padding: 6px 46px;
     font-weight: 700;
@@ -21,7 +14,6 @@ body {
     z-index: 10;
 }
 
-/* تنسيقات الـ <style> المضمنة سابقًا */
 .username {
     display: flex;
     align-items: center;
