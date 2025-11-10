@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>منصة يوردس</title>
-
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/layout.css">
@@ -15,74 +14,38 @@
     <link rel="stylesheet" href="css/smartTable.css">
     <link rel="stylesheet" href="css/citylist.css">
     <link rel="stylesheet" href="css/login-popup.css">
-    <link rel="stylesheet" href="css/price.css"> 
-
+    <link rel="stylesheet" href="css/price.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
-    
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      // تخصيص ألوان Tailwind لاستخدام اللون الأرجواني في مكان الأزرق الافتراضي
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              indigo: {
-                600: '#4F46E5', // استخدام لون أرجواني قياسي
-              }
-            }
-          }
-        }
-      }
-    </script>
-
 </head>
-
 <body>
-
-  <div id="header-container"></div>
-
-
+    <div id="header-container"></div>
     <div class="max-w-6xl mx-auto px-6 pt-8 pb-4">
-      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-        <div class="mb-4 sm:mb-0">
-          <h1 class="text-3xl font-extrabold text-gray-900">باقات يوردس 🚀</h1>
-          <p class="text-base text-gray-600">اختر الخطة المناسبة لنشاطك — دعم للتجار المحليين والمتاجر الإلكترونية والأسر المنتجة</p>
+        <div class="mb-6">
+            <h1 class="text-3xl font-extrabold text-gray-900">باقات يوردس 🚀</h1>
+            <p class="text-base text-gray-600 mt-2">
+                اختر الخطة المناسبة لنشاطك — دعم للتجار المحليين والمتاجر الإلكترونية والأسر المنتجة
+            </p>
         </div>
-
-        <div class="flex items-center gap-4 p-1 bg-white rounded-full shadow-md border border-gray-200">
-          <span class="text-sm font-semibold text-gray-700 ml-2 whitespace-nowrap hidden sm:inline">مدة الاشتراك</span>
-          <button id="toggle-monthly" class="px-4 py-2 rounded-full text-sm font-semibold transition duration-300 bg-indigo-600 text-white shadow-sm">شهري</button>
-          <button id="toggle-yearly" class="px-4 py-2 rounded-full text-sm font-semibold text-gray-600 relative transition duration-300">
-            سنوي
-            <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-green-500 text-white text-xs font-bold rounded-full px-2 py-0.5 whitespace-nowrap shadow-md">وفر 15%</span>
-          </button>
-        </div>
-      </div>
+		<div class="flex items-center gap-4 p-1 bg-white rounded-full shadow-md border border-gray-200 w-fit mx-auto">
+			<span class="text-sm font-semibold text-gray-700 ml-2 whitespace-nowrap hidden sm:inline">
+				مدة الاشتراك
+			</span>
+			<button id="toggle-monthly" class="px-4 py-2 rounded-full text-sm font-semibold transition duration-300 bg-indigo-600 text-white shadow-sm">
+				شهري
+			</button>
+			<button id="toggle-yearly" class="px-4 py-2 rounded-full text-sm font-semibold text-gray-600 relative transition duration-300">
+				سنوي
+				<span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-green-500 text-white text-xs font-bold rounded-full px-2 py-0.5 whitespace-nowrap shadow-md">
+					وفر 15%
+				</span>
+			</button>
+		</div>
     </div>
-    <main class="page-layout">
-
-        <aside class="menu-section hidden-menu" id="menu">
-            <ul>
-                <li class="active">
-                    <a href="index.html"><i class="fas fa-home"></i> <span>الرئيسية</span></a>
-                </li>
-                <li>
-                    <a href="mystore.html"><i class="fas fa-store"></i> <span>متجري</span></a>
-                </li>
-                <li>
-                    <a href="settings.html"><i class="fas fa-cog"></i> <span>إعدادات المتجر</span></a>
-                </li>
-                <li>
-                    <a href="index.html"><i class="fas fa-sign-out-alt"></i> <span>تسجيل خروج</span></a>
-                </li>
-            </ul>
-        </aside>
-
-
+    <main>
         <section class="max-w-6xl mx-auto px-6 pb-16">
             <section class="grid gap-8 grid-cols-1 md:grid-cols-3">
-
                 <article class="relative bg-white border border-gray-200 rounded-2xl p-6 shadow-sm flex flex-col">
                     <div class="flex-grow">
                         <div class="flex items-start justify-between">
@@ -92,14 +55,12 @@
                             </div>
                             <div class="text-sm text-gray-500 font-semibold bg-gray-100 px-3 py-1 rounded-full">مجانية</div>
                         </div>
-
                         <div class="mt-6 flex items-end gap-2">
                             <div>
                                 <div class="text-5xl font-extrabold text-gray-900 leading-none">0</div>
                                 <div class="text-base text-gray-500">ر.س / مجاني دائمًا</div>
                             </div>
                         </div>
-
                         <ul class="mt-8 space-y-3 text-base text-gray-700">
                             <li class="flex items-center"><span class="ml-2 text-indigo-600 font-bold">✓</span> عدد المنتجات: غير محدود</li>
                             <li class="flex items-center"><span class="ml-2 text-indigo-600 font-bold">✓</span> عدد العروض الشهرية: 25</li>
@@ -107,14 +68,11 @@
                             <li class="flex items-center"><span class="ml-2 text-red-500 font-bold">✕</span> إحصائيات وتقارير متقدمة</li>
                         </ul>
                     </div>
-
                     <div class="mt-8">
                         <a href="#" class="block text-center py-3 rounded-xl bg-white border border-gray-300 hover:bg-gray-100 text-lg font-semibold text-gray-700 transition duration-200">ابدأ مجانًا</a>
                     </div>
                 </article>
-
                 <article class="relative bg-white border-2 border-indigo-600 rounded-2xl p-6 shadow-xl flex flex-col">
-                    <div class="ribbon">موصى بها</div>
                     <div class="flex-grow">
                         <div class="flex items-start justify-between">
                             <div>
@@ -123,7 +81,6 @@
                             </div>
                             <div class="text-sm text-indigo-600 font-bold bg-indigo-100 px-3 py-1 rounded-full">الأكثر شعبية</div>
                         </div>
-
                         <div class="mt-6 flex items-end gap-2">
                             <div class="price-container" data-monthly="49" data-yearly="499">
                                 <div class="text-5xl font-extrabold text-gray-900 leading-none" id="price-standard">49</div>
@@ -134,7 +91,6 @@
                                 <div class="text-sm text-gray-400 line-through" id="old-price-standard"></div>
                             </div>
                         </div>
-
                         <ul class="mt-8 space-y-3 text-base text-gray-700">
                             <li class="flex items-center"><span class="ml-2 text-indigo-600 font-bold">✓</span> عدد المنتجات: غير محدود</li>
                             <li class="flex items-center"><span class="ml-2 text-indigo-600 font-bold">✓</span> عدد العروض الشهرية: 100</li>
@@ -142,12 +98,10 @@
                             <li class="flex items-center"><span class="ml-2 text-indigo-600 font-bold">✓</span> إحصائيات وتقارير متقدمة</li>
                         </ul>
                     </div>
-
                     <div class="mt-8">
                         <a href="#" class="block text-center py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-lg font-semibold shadow-lg transition duration-200">اشترك الآن</a>
                     </div>
                 </article>
-
                 <article class="relative bg-white border border-gray-200 rounded-2xl p-6 shadow-sm flex flex-col">
                     <div class="flex-grow">
                         <div class="flex items-start justify-between">
@@ -157,7 +111,6 @@
                             </div>
                             <div class="text-sm text-gray-500 font-semibold bg-gray-100 px-3 py-1 rounded-full">احترافية</div>
                         </div>
-
                         <div class="mt-6 flex items-end gap-2">
                             <div class="price-container" data-monthly="99" data-yearly="999">
                                 <div class="text-5xl font-extrabold text-gray-900 leading-none" id="price-premium">99</div>
@@ -168,7 +121,6 @@
                                 <div class="text-sm text-gray-400 line-through" id="old-price-premium"></div>
                             </div>
                         </div>
-
                         <ul class="mt-8 space-y-3 text-base text-gray-700">
                             <li class="flex items-center"><span class="ml-2 text-indigo-600 font-bold">✓</span> عدد المنتجات: غير محدود</li>
                             <li class="flex items-center"><span class="ml-2 text-indigo-600 font-bold">✓</span> عدد العروض الشهرية: 1000</li>
@@ -176,14 +128,11 @@
                             <li class="flex items-center"><span class="ml-2 text-indigo-600 font-bold">✓</span> إحصائيات وتقارير متقدمة</li>
                         </ul>
                     </div>
-
                     <div class="mt-8">
                         <a href="#" class="block text-center py-3 rounded-xl bg-white border border-gray-300 hover:bg-gray-100 text-lg font-semibold text-gray-700 transition duration-200">اشترك الآن</a>
                     </div>
                 </article>
-
             </section>
-
             <section class="mt-16 bg-indigo-50 border border-indigo-200 rounded-xl p-8 shadow-lg flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-right">
                 <div class="md:w-3/4">
                     <h2 class="text-2xl font-extrabold text-indigo-800 mb-2">هل تبحث عن حلول للمؤسسات الكبرى والسلاسل العالمية؟ 🌐</h2>
@@ -197,13 +146,11 @@
                     </a>
                 </div>
             </section>
-
             <section class="mt-16 pt-10 border-t border-gray-200">
                 <h2 class="text-2xl font-extrabold text-gray-900 mb-6 text-center md:text-right">
                     توصيات يوردس — اختر حسب وضعك 💡
                 </h2>
                 <div class="grid gap-6 grid-cols-1 md:grid-cols-3">
-
                     <div class="bg-white border border-indigo-100 rounded-xl p-5 shadow-sm">
                         <div class="flex items-center mb-3">
                             <span class="text-2xl font-bold text-indigo-600 ml-3">👶</span>
@@ -213,7 +160,6 @@
                             اختر **الباقة المجانية** إذا بدأت للتو وتريد اختبار السوق وإدراج بعض العروض دون تكلفة أولية. ابدأ بخطوات ثابتة دون أي التزام مالي.
                         </p>
                     </div>
-
                     <div class="bg-white border-2 border-indigo-600 rounded-xl p-5 shadow-lg">
                         <div class="flex items-center mb-3">
                             <span class="text-2xl font-bold text-indigo-600 ml-3">📈</span>
@@ -223,7 +169,6 @@
                             **الباقة القياسية** مثالية للتوسع — حجم عروض أكبر، تقارير وتحليلات أفضل، وإمكانية إضافة فروع، كل ذلك بتكلفة مناسبة ومخفضة عند الاشتراك السنوي.
                         </p>
                     </div>
-
                     <div class="bg-white border border-indigo-100 rounded-xl p-5 shadow-sm">
                         <div class="flex items-center mb-3">
                             <span class="text-2xl font-bold text-indigo-600 ml-3">👑</span>
@@ -233,28 +178,20 @@
                             **باقة الأعمال (المميزة)** تمنحك حدودًا أعلى بكثير، ودعمًا مخصصًا. للحصول على أفضل سعر وحلول متكاملة، <a href="#" class="text-indigo-600 font-bold hover:underline">تواصل معنا الآن</a> لعرض سعر مؤسساتي خاص.
                         </p>
                     </div>
-
                 </div>
             </section>
-
         </section>
-
     </main>
-
-
-  </main>
-
-		<div id="footer-container"></div>
-		<script src="load-footer.js"></script>
-		<script src="load-header.js"></script>
-        <script src="js/product-page.js"></script>
-        <script src="script.js"></script>
-        <script src="smartTable.js"></script>
-        <script src="mystore.js"></script>
-        <script src="categories.js"></script>
-        <script src="citylist.js"></script>
-        <script src="login-toggle.js"></script>
-        <script src="price.js"></script>
-
+    <div id="footer-container"></div>
+    <script src="load-footer.js"></script>
+    <script src="load-header.js"></script>
+    <script src="js/product-page.js"></script>
+    <script src="script.js"></script>
+    <script src="smartTable.js"></script>
+    <script src="mystore.js"></script>
+    <script src="categories.js"></script>
+    <script src="citylist.js"></script>
+    <script src="login-toggle.js"></script>
+    <script src="price.js"></script>
 </body>
 </html>
