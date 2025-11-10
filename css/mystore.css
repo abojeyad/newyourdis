@@ -1,5 +1,3 @@
-
-
 .container {
   width: 100%;
   margin: 0 auto;
@@ -9,12 +7,6 @@
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   direction: rtl;
 }
-
-/*
-========================================
-2. تنسيقات القسم الأول: معلومات المتجر
-========================================
-*/
 
 .row {
   display: flex;
@@ -40,17 +32,17 @@
 }
 
 .store-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start; 
-    gap: 8px; 
-    margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; 
+  gap: 8px; 
+  margin-bottom: 8px;
 }
 
 .store-name-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .store-name {
@@ -86,6 +78,18 @@
   align-items: center;
   gap: 5px; 
   margin-top: 5px; 
+  justify-content: space-between;
+}
+
+.left-actions, .right-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+}
+
+.right-actions {
+  position: relative;
 }
 
 .store-actions span {
@@ -101,10 +105,10 @@
 }
 
 .store-actions span::before {
-    content: "\f004";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    color: #654321;
+  content: "\f004";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #654321;
 }
 
 .store-actions button {
@@ -119,8 +123,8 @@
 }
 
 .store-actions button i {
-    margin-left: 5px; 
-    font-size: 12px;
+  margin-left: 5px; 
+  font-size: 12px;
 }
 
 .follow {
@@ -148,12 +152,6 @@
   background-color: #ffc8c8;
 }
 
-/* زر اعدادت المتجر والإجراءات */
-.actions-left {
-  position: relative;
-  flex-shrink: 0;
-}
-
 .actions-btn {
   background-color: #654321;
   color: #fff;
@@ -174,7 +172,7 @@
 .actions-menu {
   display: none;
   position: absolute;
-  left: 0;
+  right: 0;
   top: 100%;
   background: #fff;
   border: 1px solid #ddd;
@@ -184,16 +182,19 @@
   padding: 6px 0;
   margin: 5px 0 0 0;
   z-index: 20;
-  min-width: 150px;
-  text-align: right; 
+  width: max-content;  
+  text-align: right;
 }
+
 
 .actions-menu li {
   padding: 8px 12px;
   cursor: pointer;
   font-size: 13px;
   transition: 0.2s;
+  white-space: nowrap; 
 }
+
 
 .actions-menu li:hover {
   background-color: #f8f8f8;
@@ -226,12 +227,6 @@
   background-color: #0056b3;
 }
 
-
-/*
-========================================
-3. تنسيقات القسم الثاني: Tabs والإجراءات
-========================================
-*/
 .second-row {
   width: 100%;
   margin-top: 15px;
@@ -291,13 +286,7 @@
   padding: 20px 0;
 }
 
-/*
-========================================
-4. التجاوب مع شاشات الجوال
-========================================
-*/
 @media (max-width: 600px) {
-  
   .row {
     flex-direction: column;
     align-items: center;
@@ -310,14 +299,9 @@
   }
 
   .store-header {
-      flex-direction: column;
-      align-items: center;
-      gap: 5px;
-  }
-
-  .actions-left {
-    position: relative;
-    margin-top: 5px;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
   }
 
   .store-actions {

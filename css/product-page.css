@@ -21,7 +21,7 @@
   gap: 40px;
   margin: 0 auto;          /* إزالة المسافة الخارجية */
   padding: 40px 40px 40px 40px; /* 40px داخلية من جميع الجهات */
-  max-width: 1300px;
+  max-width: 1000px;
   flex-wrap: wrap;
   font-family: 'Cairo', sans-serif;
   background-color: var(--background-light);
