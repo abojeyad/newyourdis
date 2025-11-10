@@ -1,3 +1,6 @@
+// scripts.js
+// هذا الملف يفترض وجود createProductCard على window (موجود في product-component.js)
+
 const products = [
   { name: "بنطال رسمي واسع بخصر متوسط", image: "images/products/image1.jpg", store: "أمازون" },
   { name: "قميص قطني بأكمام قصيرة",     image: "images/products/image2.jpg", store: "نون" },
@@ -76,7 +79,6 @@ const desiredSizes = {
   group2: 10,
   group3: 10,
   group4: 6
-  
 };
 
 const offsets = {
@@ -95,113 +97,79 @@ const offersGroups = {
   group2:      makeGroup(desiredSizes.group2,      offsets.group2),
   group3:      makeGroup(desiredSizes.group3,      offsets.group3),
   group4:      makeGroup(desiredSizes.group4,      offsets.group4)
-
 };
 
+// ننتظر DOM جاهزًا ثم نملأ المحتوى
+document.addEventListener('DOMContentLoaded', () => {
+  // عناصر الصفحة
+  const offersContainer      = document.getElementById("offers");
+  const storesContainer      = document.getElementById("stores");
+  const recommendedContainer = document.getElementById("offers-recommended");
+  const adsSection           = document.getElementById("ads-section");
+  const categoryBar          = document.getElementById("category-bar");
+  const group1Container      = document.getElementById("group1");
+  const group2Container      = document.getElementById("group2");
+  const group3Container      = document.getElementById("group3");
 
-function createProductCard(product) {
-  const card = document.createElement("div");
-  card.classList.add("product-card");
-  card.innerHTML = `
-    <div class="product-image">
-      <div class="product-header">
-        <div class="favorite-icon"><i class="far fa-bookmark"></i></div>
-        <div class="countdown-timer">18:34:50</div>
-      </div>
-      <img src="${product.image}" alt="${product.name}" class="product-img">
-    </div>
-    <div class="product-info">
-      <div class="product-store-name">${product.store}</div>
-      <div class="product-name">${product.name}</div>
-      <div class="pricing">
-        <span class="old-price">500 ريال</span>
-        <span class="discount-percentage">-20%</span>
-        <span class="new-price">400 ريال</span>
-      </div>
-    </div>
-    <button class="order-now-btn">
-      اطلب الآن <i class="fas fa-external-link-alt"></i>
-    </button>
-  `;
-
-  // النقر على أي جزء من البطاقة يفتح product.html
-  card.addEventListener('click', () => {
-    window.location.href = 'product.html';
+  // === إنشاء بطاقات الأقسام التي تفتح نفس الصفحة التجريبية categories.html ===
+  categories.forEach(cat => {
+    const link = document.createElement('a');
+    link.className = 'category-card';
+    link.href = 'categories.html';     // كل الأقسام تفتح نفس الصفحة
+    link.rel = 'noopener noreferrer';
+    link.innerHTML = `
+      <img src="${cat.image}" alt="${cat.name}" class="category-img">
+      <div class="category-name">${cat.name}</div>
+    `;
+    if (categoryBar) categoryBar.appendChild(link);
   });
 
-  // النقر على زر "اطلب الآن" يفتح رابط خارجي في تاب جديد
-  const orderBtn = card.querySelector('.order-now-btn');
-  orderBtn.addEventListener('click', (event) => {
-    event.stopPropagation(); // يمنع النقر من فتح product.html
-    window.open('https://www.google.com', '_blank'); // رابط خارجي
+  // المتاجر المميزة
+  featuredStores.forEach(store => {
+    const storeCard = document.createElement("div");
+    storeCard.classList.add("store-card");
+    storeCard.innerHTML = `
+      <img src="${store.image}" alt="${store.name}" class="store-img">
+      <div class="store-name">${store.name}</div>
+    `;
+    if (storesContainer) storesContainer.appendChild(storeCard);
   });
 
-  return card;
-}
+  // الإعلانات
+  ads.forEach(ad => {
+    const adCard = document.createElement("div");
+    adCard.classList.add("ads-card");
+    adCard.innerHTML = `
+      <img src="${ad.image}" alt="${ad.title}">
+      <div class="ads-title">${ad.title}</div>
+      <div class="ads-description">${ad.description}</div>
+    `;
+    if (adsSection) adsSection.appendChild(adCard);
+  });
 
+  // التأكد من وجود createProductCard
+  if (typeof createProductCard !== 'function') {
+    console.error('createProductCard غير موجود. تأكد من تحميل product-component.js قبل هذا الملف.');
+    return;
+  }
 
-const offersContainer      = document.getElementById("offers");
-const storesContainer      = document.getElementById("stores");
-const recommendedContainer = document.getElementById("offers-recommended");
-const adsSection           = document.getElementById("ads-section");
-const categoryBar          = document.getElementById("category-bar");
-const group1Container      = document.getElementById("group1");
-const group2Container      = document.getElementById("group2");
-const group3Container      = document.getElementById("group3");
+  // ملء مجموعات المنتجات
+  if (offersContainer) offersGroups.best.forEach(p => offersContainer.appendChild(createProductCard(p)));
+  if (recommendedContainer) offersGroups.recommended.forEach(p => recommendedContainer.appendChild(createProductCard(p)));
+  if (group1Container) offersGroups.group1.forEach(p => group1Container.appendChild(createProductCard(p)));
+  if (group2Container) offersGroups.group2.forEach(p => group2Container.appendChild(createProductCard(p)));
+  if (group3Container) offersGroups.group3.forEach(p => group3Container.appendChild(createProductCard(p)));
 
-// === إنشاء بطاقات الأقسام التي تفتح نفس الصفحة التجريبية categories.html ===
-categories.forEach(cat => {
-  const link = document.createElement('a');
-  link.className = 'category-card';
-  link.href = 'categories.html';     // كل الأقسام تفتح نفس الصفحة
-
-  link.rel = 'noopener noreferrer';
-
-  link.innerHTML = `
-    <img src="${cat.image}" alt="${cat.name}" class="category-img">
-    <div class="category-name">${cat.name}</div>
-  `;
-
-  if (categoryBar) categoryBar.appendChild(link);
-});
-
-
-featuredStores.forEach(store => {
-  const storeCard = document.createElement("div");
-  storeCard.classList.add("store-card");
-  storeCard.innerHTML = `
-    <img src="${store.image}" alt="${store.name}" class="store-img">
-    <div class="store-name">${store.name}</div>
-  `;
-  if (storesContainer) storesContainer.appendChild(storeCard);
-});
-
-ads.forEach(ad => {
-  const adCard = document.createElement("div");
-  adCard.classList.add("ads-card");
-  adCard.innerHTML = `
-    <img src="${ad.image}" alt="${ad.title}">
-    <div class="ads-title">${ad.title}</div>
-    <div class="ads-description">${ad.description}</div>
-  `;
-  if (adsSection) adsSection.appendChild(adCard);
-});
-
-if (offersContainer) offersGroups.best.forEach(p => offersContainer.appendChild(createProductCard(p)));
-if (recommendedContainer) offersGroups.recommended.forEach(p => recommendedContainer.appendChild(createProductCard(p)));
-if (group1Container) offersGroups.group1.forEach(p => group1Container.appendChild(createProductCard(p)));
-if (group2Container) offersGroups.group2.forEach(p => group2Container.appendChild(createProductCard(p)));
-if (group3Container) offersGroups.group3.forEach(p => group3Container.appendChild(createProductCard(p)));
-
-// أي عنصر يحمل class "group4" سيتم ملؤه بنفس المجموعة من المنتجات
-const group4Containers = document.querySelectorAll('.group4');
-
-group4Containers.forEach(container => {
-  offersGroups.group4.forEach(product => {
-    container.appendChild(createProductCard(product));
+  // أي عنصر يحمل class "group4" سيتم ملؤه بنفس المجموعة من المنتجات
+  const group4Containers = document.querySelectorAll('.group4');
+  group4Containers.forEach(container => {
+    offersGroups.group4.forEach(product => {
+      container.appendChild(createProductCard(product));
+    });
   });
 });
 
+// === دوال الواجهة الأخرى كما كانت ===
 
 function toggleMenu() {
   const menu = document.getElementById('menu');
@@ -300,5 +268,3 @@ function toggleMenu() {
     if (li) menu.classList.add('hidden-menu');
   });
 })();
-
-

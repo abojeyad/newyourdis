@@ -17,21 +17,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
 
-  <style>
-    .username {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    .username img {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-  </style>
 </head>
 
 <body>
@@ -39,52 +24,58 @@
   <div id="header-container"></div>
 
 <main>
-
-<div class="container">
+  <div class="container">
 
     <div class="row">
       <img src="images/avatar.jpg" alt="صورة المستخدم">
       <div class="store-info">
-      
-		<div class="store-header">
-		  <div style="flex-grow:1; display:flex; flex-direction:column;">
-			<div class="store-name">متجر العز للعود</div>
-			<div class="store-meta">
-				<span class="username">@alizzoude</span>
-				<span class="type-tag">(متجر إلكتروني)</span>
-			</div>
-		  </div>
 
-		  <!-- أزرار الإجراءات وإعدادات المتجر بجانب بعض -->
-		  <div class="actions-left" style="display:flex; gap:5px;">
-			<a href="settings.html" class="settings-btn">إعدادات المتجر <i class="fas fa-cog"></i></a>
-			<button class="actions-btn" id="actionsButton">الإجراءات <i class="fas fa-ellipsis-v"></i></button>
-			  <ul class="actions-menu" id="actionsMenu">
-				<li><i class="fas fa-plus-circle"></i> إضافة منتج جديد</li>
-				<li><i class="fas fa-bullhorn"></i> نشر عروض جديدة</li>
-				<li><i class="fas fa-file-excel"></i> استيراد المنتجات من ملف اكسل</li>
-				<li><i class="fas fa-file-import"></i> استيراد العروض من ملف اكسل</li>
-				<li><i class="fas fa-edit"></i> تعديل متعدد للمنتجات</li>
-				<li><i class="fas fa-edit"></i> تعديل العروض النشطة</li>
-				<li><i class="fas fa-pause-circle"></i> ايقاف العروض النشطة</li>
-				<li><i class="fas fa-file-export"></i> تصدير المنتجات الى ملف اكسل</li>
-				<li><i class="fas fa-trash-alt"></i> حذف المنتجات</li>
-			  </ul>
-		  </div>
-		</div>
+        <div class="store-header">
+          <div style="flex-grow:1; display:flex; flex-direction:column;">
+            <div class="store-name">متجر العز للعود</div>
+            <div class="store-meta">
+              <span class="username">@alizzoude</span>
+              <span class="type-tag">(متجر إلكتروني)</span>
+            </div>
+          </div>
+        </div>
 
-      
         <div class="store-description">
           متجر العز للعود متخصص في بيع أجود أنواع العود والعطور الشرقية الأصيلة، مع تقديم تجربة تسوق فريدة لعشاق الروائح الفاخرة.
         </div>
 
-        <div class="store-actions">
-          <span>345 متابع</span>
-          <button class="follow"><i class="fas fa-user-plus"></i> متابعة المتجر</button>
-          <button class="message"><i class="fas fa-paper-plane"></i> مراسلة البائع</button>
-          <button class="share"><i class="fas fa-share-alt"></i> مشاركة الحساب</button>
-          <button class="report"><i class="fas fa-flag"></i> الإبلاغ عن الحساب</button>
-          <button class="block"><i class="fas fa-ban"></i> حظر المتجر</button>
+        <!-- صف الأزرار: أزرار على الطرفين -->
+        <div class="store-actions" style="display:flex; flex-wrap:wrap; gap:5px; align-items:center; justify-content:space-between;">
+          
+          <!-- جهة اليسار: أزرار المتابعة والتفاعل -->
+          <div class="left-actions" style="display:flex; gap:5px; flex-wrap:wrap; align-items:center;">
+            <span>345 متابع</span>
+            <button class="follow"><i class="fas fa-user-plus"></i> متابعة المتجر</button>
+            <button class="message"><i class="fas fa-paper-plane"></i> مراسلة البائع</button>
+            <button class="share"><i class="fas fa-share-alt"></i> مشاركة الحساب</button>
+            <button class="report"><i class="fas fa-flag"></i> الإبلاغ عن الحساب</button>
+            <button class="block"><i class="fas fa-ban"></i> حظر المتجر</button>
+          </div>
+
+          <!-- جهة اليمين: أزرار إعدادات المتجر والإجراءات -->
+          <div class="right-actions" style="display:flex; gap:5px; flex-wrap:wrap; align-items:center;">
+            <a href="settings.html" class="settings-btn"><i class="fas fa-cog"></i> إعدادات المتجر</a>
+            <div class="actions-dropdown">
+              <button class="actions-btn" id="actionsButton"><i class="fas fa-ellipsis-v"></i> الإجراءات</button>
+              <ul class="actions-menu" id="actionsMenu">
+                <li><i class="fas fa-plus-circle"></i> إضافة منتج جديد</li>
+                <li><i class="fas fa-bullhorn"></i> نشر عروض جديدة</li>
+                <li><i class="fas fa-file-excel"></i> استيراد المنتجات من ملف اكسل</li>
+                <li><i class="fas fa-file-import"></i> استيراد العروض من ملف اكسل</li>
+                <li><i class="fas fa-edit"></i> تعديل متعدد للمنتجات</li>
+                <li><i class="fas fa-edit"></i> تعديل العروض النشطة</li>
+                <li><i class="fas fa-pause-circle"></i> ايقاف العروض النشطة</li>
+                <li><i class="fas fa-file-export"></i> تصدير المنتجات الى ملف اكسل</li>
+                <li><i class="fas fa-trash-alt"></i> حذف المنتجات</li>
+              </ul>
+            </div>
+          </div>
+
         </div>
 
       </div>
@@ -96,8 +87,8 @@
           <button class="tab-btn active" data-tab="offers-tab">العروض</button>
           <button class="tab-btn" data-tab="products-tab">المنتجات</button>
           <button class="tab-btn" data-tab="expired-tab">العروض المنتهية</button>
-		  <button class="tab-btn" data-tab="expired-tab">إحصائيات المتجر</button>
-		  <button class="tab-btn" data-tab="expired-tab">معلومات المتجر</button>
+          <button class="tab-btn" data-tab="expired-tab">إحصائيات المتجر</button>
+          <button class="tab-btn" data-tab="expired-tab">معلومات المتجر</button>
         </div>
       </div>
 
@@ -115,16 +106,16 @@
 
     </div>
 
-</div>
+  </div>
+</main>
 
-
-  </main>
 
 <div id="footer-container"></div>
 <script src="load-footer.js"></script>
 <script src="load-header.js"></script>
 <script src="js/product-page.js"></script>
 <script src="script.js"></script>
+<script src="product-component.js"></script>
 <script src="smartTable.js"></script>
 <script src="mystore.js"></script>
 <script src="categories.js"></script>
