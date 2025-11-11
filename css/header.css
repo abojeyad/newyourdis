@@ -64,7 +64,7 @@ header {
 .language-selector,
 .username,
 .city {
-  font-size: 14px;
+  font-size: 16px; /* تكبير الأيقونات */
   color: #333;
   cursor: pointer;
   padding: 6px 8px;
@@ -79,11 +79,11 @@ header {
 .language-selector i,
 .city i {
     color: #6c757d; 
-    font-size: 16px; 
+    font-size: 20px; /* تكبير الأيقونات */
 }
 .city i { 
     color: #800000;
-    font-size: 18px;
+    font-size: 22px; /* تكبير أيقونة الموقع قليلاً */
 }
 
 .action-icon:hover,
@@ -132,33 +132,31 @@ header {
 
 /* تنسيق زر متجري المحدث */
 #mystore-btn {
-  background-color: transparent; /* خلفية شفافة */
-  border: 1px solid #ccc; /* حدود بسيطة بدلاً من الظل */
-  color: #000; /* لون النص أسود */
+  background-color: transparent;
+  border: 1px solid #ccc;
+  color: #000;
   padding: 6px 15px;
-  border-radius: 25px; /* حواف أكثر اعتدالاً */
+  border-radius: 25px;
   text-decoration: none;
   font-weight: 600;
-  box-shadow: none; /* إلغاء الظل */
+  box-shadow: none;
   transition: background-color 0.3s, border-color 0.3s, transform 0.2s;
-  /* توسيط الأفاتار والنص معاً */
   display: flex; 
-  align-items: center; /* توسيط عمودي */
+  align-items: center;
   gap: 8px; 
 }
 
 #mystore-btn:hover {
-  background-color: #f0f0f0; /* لون خفيف عند التحويم */
+  background-color: #f0f0f0;
   border-color: #aaa;
   transform: scale(1.02); 
 }
 
 .mystore-avatar {
-  width: 28px; /* حجم أكبر قليلاً للأفاتار */
+  width: 28px;
   height: 28px;
   border-radius: 50%; 
   object-fit: cover; 
-  border: 2px solid #ddd; /* حدود خفيفة حول الأفاتار */
   transition: none; 
 }
 
@@ -178,7 +176,6 @@ header {
 .user-dropdown-list {
     display: none !important;
 }
-
 
 .city-option:hover,
 .lang-option:hover {
