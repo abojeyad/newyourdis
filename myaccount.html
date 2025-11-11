@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>منصة يوردس</title>
+
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/product-page.css">
+  <link rel="stylesheet" href="css/myaccount.css">
+  <link rel="stylesheet" href="css/product-card.css">
+  <link rel="stylesheet" href="css/categoriespage.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div id="header-container"></div>
+
+
+<main>
+  <div class="container">
+
+    <!-- القسم العلوي -->
+    <div class="row">
+      <img src="images/avatar.jpg" alt="صورة المستخدم">
+      <div class="store-info">
+
+        <div class="store-header">
+          <div style="flex-grow:1; display:flex; flex-direction:column;">
+            <div class="store-name">محمد أحمد</div>
+            <div class="store-meta">
+              <span class="username">@user4345</span>
+              <span class="type-tag">(حساب شخصي)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- سطر الوصف مع زر الإعدادات على نفس الصف -->
+        <div class="store-description-row" style="display:flex; justify-content:space-between; align-items:center; margin-top:5px;">
+          <div class="store-description">
+            لا إله الا الله محمد رسول الله
+          </div>
+          <a href="‏‏settings-myaccount.html" class="settings-btn"><i class="fas fa-cog"></i>إعدادات الحساب</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- القسم الثاني: تفاصيل المتجر -->
+    <div class="store-details">
+      <div><strong>اسم الحساب:</strong>محمد أحمد</div>
+      <div><strong>اسم المستخدم:</strong> @user4345</div>
+      <div><strong>تاريخ الإنشاء:</strong> 01-01-2023</div>
+      <div><strong>البريد الإلكتروني:</strong> user@example.com</div>
+      <div><strong>رقم الهاتف:</strong> 0501234567</div>
+    </div>
+
+  </div>
+</main>
+
+
+<div id="footer-container"></div>
+<script src="load-footer.js"></script>
+<script src="load-header.js"></script>
+<script src="js/product-page.js"></script>
+<script src="script.js"></script>
+<script src="product-component.js"></script>
+<script src="smartTable.js"></script>
+<script src="mystore.js"></script>
+<script src="categories.js"></script>
+
+
+</body>
+</html>
