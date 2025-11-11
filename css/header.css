@@ -16,6 +16,7 @@ body {
 .header-right a {
   text-decoration: none;
   color: inherit;
+  white-space: nowrap;
 }
 
 #user-buttons {
@@ -25,13 +26,13 @@ body {
 }
 
 header {
-  background-color: #f7f7f7;
-  padding: 2px 24px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+  background-color: #ffffff;
+  padding: 10px 24px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.08);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   border-bottom: 1px solid #ddd;
   position: fixed;
   top: 0;
@@ -47,165 +48,196 @@ header {
   gap: 16px;
 }
 
+.header-left { 
+    flex-grow: 0; 
+}
+
+.header-right { 
+    flex-grow: 0; 
+}
+
 .header-right .menu-toggle {
   display: none;
 }
 
+.action-icon,
 .language-selector,
-.notifications,
-.messages,
-.username {
+.username,
+.city {
   font-size: 14px;
   color: #333;
-  cursor: pointer;
-}
-
-.search-box {
-  flex: 1;
-  max-width: 400px;
-  margin: 8px 0;
-}
-
-.search-box input {
-  width: 100%;
-  padding: 6px 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 14px;
-}
-
-.logo img {
-  width: 120px;
-  height: auto;
-}
-
-#login-btn {
-  background-color: #8B4513;
-  color: #fff;
-  padding: 6px 12px;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background-color 0.3s;
-}
-
-#login-btn:hover {
-  background-color: #A0522D;
-}
-
-.username {
   cursor: pointer;
   padding: 6px 8px;
   border-radius: 6px;
   transition: background-color 0.15s;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 5px;
 }
 
-.username:hover {
+.action-icon i,
+.language-selector i,
+.city i {
+    color: #6c757d; 
+    font-size: 16px; 
+}
+.city i { 
+    color: #800000;
+    font-size: 18px;
+}
+
+.action-icon:hover,
+.language-selector:hover,
+.username:hover,
+.city:hover {
   background-color: #f0f0f0;
 }
 
-.user-arrow {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.18s ease;
-  font-size: 12px;
-  color: #666;
+.search-box {
+  flex: 1; 
+  max-width: 500px;
+  margin: 0 10px;
 }
 
-.username[aria-expanded="true"] .user-arrow {
-  transform: rotate(180deg);
-}
-
-.user-dropdown {
-  position: absolute;
-  top: calc(100% + 6px);
-  right: 6px;
-  min-width: 220px;
-  max-width: 320px;
-  background: #ffffff;
-  border: 1px solid #e6e6e6;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-  border-radius: 8px;
-  overflow: hidden;
-  display: none;
-  z-index: 1100;
-  direction: rtl;
-}
-
-.user-dropdown.show {
-  display: block;
-}
-
-.user-dropdown .user-dropdown-list {
-  list-style: none;
-  margin: 0;
-  padding: 8px 0;
-}
-
-.user-dropdown .user-dropdown-list li {
-  padding: 10px 14px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
+.search-box input {
+  width: 100%;
+  padding: 8px 15px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
   font-size: 14px;
-  color: #333;
 }
 
-.user-dropdown .user-dropdown-list li i {
-  margin-left: 8px;
-  margin-right: 0;
-  font-size: 18px;
-  color: #666;
-  min-width: 18px;
+.logo img {
+  width: 150px;
+  height: auto;
 }
 
-.user-dropdown .user-dropdown-list li:hover {
-  background: #f7f7f7;
-}
-
-.user-dropdown .user-dropdown-list li span {
-  display: inline-block;
-}
-
-.user-dropdown .user-dropdown-list li.active {
-  background-color: #f0f0f0;
+#login-btn {
+  background-color: #800000; 
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 20px;
+  text-decoration: none;
   font-weight: bold;
-  color: #000;
-  border-right: 3px solid #007bff;
+  transition: background-color 0.3s;
 }
 
-@media (max-width: 768px) {
-  .header-right,
-  .header-left {
-    display: none;
-  }
-
-  .search-box {
-    flex: 1;
-    max-width: 100%;
-  }
+#login-btn:hover {
+  background-color: #660000; 
 }
+
+.username {
+  font-weight: 600;
+}
+
+/* تنسيق زر متجري المحدث */
+#mystore-btn {
+  background-color: transparent; /* خلفية شفافة */
+  border: 1px solid #ccc; /* حدود بسيطة بدلاً من الظل */
+  color: #000; /* لون النص أسود */
+  padding: 6px 15px;
+  border-radius: 25px; /* حواف أكثر اعتدالاً */
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: none; /* إلغاء الظل */
+  transition: background-color 0.3s, border-color 0.3s, transform 0.2s;
+  /* توسيط الأفاتار والنص معاً */
+  display: flex; 
+  align-items: center; /* توسيط عمودي */
+  gap: 8px; 
+}
+
+#mystore-btn:hover {
+  background-color: #f0f0f0; /* لون خفيف عند التحويم */
+  border-color: #aaa;
+  transform: scale(1.02); 
+}
+
+.mystore-avatar {
+  width: 28px; /* حجم أكبر قليلاً للأفاتار */
+  height: 28px;
+  border-radius: 50%; 
+  object-fit: cover; 
+  border: 2px solid #ddd; /* حدود خفيفة حول الأفاتار */
+  transition: none; 
+}
+
+#logout-btn {
+    color: #dc3545 !important;
+    font-weight: 600;
+    padding: 8px 10px;
+    border-radius: 4px;
+}
+#logout-btn:hover {
+    background-color: #f8d7da;
+}
+
+.user-arrow,
+.user-dropdown,
+.user-dropdown.show,
+.user-dropdown-list {
+    display: none !important;
+}
+
+
 .city-option:hover,
 .lang-option:hover {
   background-color: #f0f0f0;
   border-radius: 5px;
 }
 
-#mystore-btn {
-  background-color: #FFA500; 
-  color: #000;
-  padding: 6px 12px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s, transform 0.2s;
+/* ----------------------------------- */
+/* التجاوبية (Responsiveness) */
+/* ----------------------------------- */
+@media (max-width: 1100px) {
+    .header-right .favorites,
+    .header-right .prices {
+        display: none;
+    }
+    .search-box {
+        max-width: 400px;
+    }
 }
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap; 
+        padding: 8px 15px;
+        justify-content: space-between;
+    }
+    
+    .header-left {
+        order: 1; 
+        flex-basis: auto;
+        gap: 10px;
+        flex-grow: 1; 
+        justify-content: flex-start;
+    }
 
-#mystore-btn:hover {
-  background-color: #FFC300; 
-  transform: scale(1.05); 
+    .header-right {
+        order: 3; 
+        display: none; 
+    }
+    
+    .search-box {
+        order: 2;
+        flex-basis: 100%;
+        margin: 8px 0;
+        max-width: 100%;
+    }
+    
+    .header-right .logo { 
+        display: block !important; 
+        margin-left: auto; 
+    }
+    
+    .menu-toggle {
+        display: block !important;
+        order: 4; 
+        font-size: 24px;
+        color: #333;
+    }
+
+    .city {
+        display: none !important;
+    }
 }

@@ -1,0 +1,109 @@
+/* تنسيق رئيسي */
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 15px;
+  background-color: #fff;
+  direction: rtl;
+}
+
+/* صف الصورة والمعلومات */
+.row {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.row img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #f0f0f0;
+  flex-shrink: 0;
+}
+
+/* معلومات المتجر */
+.store-info {
+  flex-grow: 1;
+  text-align: right;
+}
+
+/* القسم العلوي: اسم المتجر ووصفه */
+.store-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.store-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.store-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #007bff;
+}
+
+.store-meta .type-tag {
+  font-size: 12px;
+  color: #6c757d;
+}
+
+/* سطر الوصف مع زر الإعدادات */
+.store-description-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.store-description {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.4;
+}
+
+/* زر إعدادات المتجر */
+.settings-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.settings-btn i {
+  margin-right: 5px;
+}
+
+.settings-btn:hover {
+  background-color: #0056b3;
+}
+
+/* القسم الثاني: تفاصيل المتجر */
+.store-details {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.store-details div {
+  margin-bottom: 5px;
+}
