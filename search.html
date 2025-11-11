@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>منصة يوردس</title>
+
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/product-card.css">
+  <link rel="stylesheet" href="css/categoriespage.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <div id="header-container"></div>
+
+  <main>
+  <section class="main-content">
+
+    <div id="search-term-display" style="
+        padding: 15px 0; 
+        margin-bottom: 20px; 
+        border-bottom: 2px solid #eee;
+    ">
+      </div>
+
+    <div class="content-bottom">
+
+      <aside class="filters-panel">
+        <h3>تصفية العروض</h3>
+
+        <div class="filter-group">
+          <h4>الترتيب</h4>
+          <label><input type="radio" name="sort" checked> افتراضي</label>
+          <label><input type="radio" name="sort"> أعلى نسبة تخفيض</label>
+          <label><input type="radio" name="sort"> السعر: من الأقل إلى الأعلى</label>
+          <label><input type="radio" name="sort"> السعر: من الأعلى إلى الأقل</label>
+          <label><input type="radio" name="sort"> القريبة مني</label>
+        </div>
+
+        <div class="filter-group">
+          <h4>الفئة</h4>
+          <label><input type="radio" name="gender" checked> الكل</label>
+          <label><input type="radio" name="gender"> رجال</label>
+          <label><input type="radio" name="gender"> نساء</label>
+          <label><input type="radio" name="gender"> أطفال</label>
+        </div>
+
+        <div class="filter-group">
+          <h4>خصم %</h4>
+          <label><input type="radio" name="discount" checked> الكل</label>
+          <label><input type="radio" name="discount"> تخفيض 25% فأكثر</label>
+          <label><input type="radio" name="discount"> تخفيض 50% فأكثر</label>
+          <label><input type="radio" name="discount"> تخفيض 75% فأكثر</label>
+        </div>
+
+        <div class="filter-group">
+          <h4>المدة</h4>
+          <label><input type="radio" name="duration" checked> الكل</label>
+          <label><input type="radio" name="duration"> تنتهي خلال 8 ساعات</label>
+          <label><input type="radio" name="duration"> تنتهي خلال 24 ساعة</label>
+        </div>
+      </aside>
+
+      <div id="offers" class="offers-grid"></div>
+
+    </div> </section>
+
+  </main>
+
+<div id="footer-container"></div>
+<script src="load-footer.js"></script>
+<script src="load-header.js"></script>
+<script src="categories.js"></script>
+<script src="script.js"></script>
+<script src="product-component.js"></script>
+</body>
+</html>

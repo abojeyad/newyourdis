@@ -6,9 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
   <header>
     <div class="header-left">
         <a href="#" id="login-btn" style="color:#fff; text-decoration:none; display:none;">تسجيل دخول</a>
-		<a href="#" id="logout-btn" class="action-icon logout" title="تسجيل خروج" style="display:none; color:#000;"> <i class="fas fa-sign-out-alt"></i></a>
+        <a href="#" id="logout-btn" class="action-icon logout" title="تسجيل خروج" style="display:none; color:#000;"> <i class="fas fa-sign-out-alt"></i></a>
         <a href="mystore.html" id="mystore-btn" style="text-decoration:none; color:#000; display:flex; align-items:center; gap:5px;">
-          <img src="images/avatar.jpg" alt="Avatar" style="width:24px; height:24px; border-radius:50%;" />
+          <img src="images/avatar.jpg" class="mystore-avatar" />
           دخول لمتجري
         </a>
         <a href="index.html" id="home-btn" class="username" style="text-decoration:none; color:#000; display: none;">العودة للرئيسية</a>
@@ -16,20 +16,22 @@ document.addEventListener('DOMContentLoaded', () => {
           <i class="fas fa-map-marker-alt" style="color: #800000;"></i>
           <span>مكة المكرمة</span>
         </a>
-        <div class="menu-toggle"><i class="fas fa-bars"></i></div>
     </div>
-    <div class="search-box">
-      <input type="text" placeholder="ابحث عن عروض، متاجر، منتجات..." />
+    <div class="search-box" style="display:flex; align-items:center; border: 1px solid #ccc; border-radius: 20px; padding: 0 10px; background: #fff;">
+      <input type="text" id="search-input" placeholder="ابحث عن عروض، متاجر، منتجات..." style="border: none; outline: none; flex-grow: 1; padding: 8px 5px; background: none;" />
+      <button id="search-button" style="background:none; border:none; cursor:pointer; padding: 5px; margin-left: 5px;" title="بحث">
+        <i class="fas fa-search" style="font-size:16px; color:#800000;"></i>
+      </button>
     </div>
     <div class="header-right">
-      <a href="favorites.html" class="action-icon favorites" title="المفضلة"><i class="fas fa-bookmark"></i></a>
-      <a href="price.html" class="action-icon prices" title="الأسعار"><i class="fas fa-dollar-sign"></i></a>
+      <a href="favorites.html" class="action-icon favorites" title="المفضلة"><i class="fas fa-bookmark" style="font-size:20px;"></i></a>
+      <a href="price.html" class="action-icon prices" title="الأسعار"><i class="fas fa-dollar-sign" style="font-size:20px;"></i></a>
       <a href="notifications.html" class="action-icon notifications" style="position:relative;" title="الإشعارات">
-          <i class="fas fa-bell"></i>
+          <i class="fas fa-bell" style="font-size:20px;"></i>
           <span class="badge red-badge" style="position:absolute; top:-8px; right:-8px; background-color: #dc3545; color:white; border-radius:50%; padding:2px 5px; font-size:10px; font-weight:bold; line-height:1; min-width:18px; text-align:center;">10</span>
       </a>
-      <a href="messages.html" class="action-icon messages" title="الرسائل"><i class="fas fa-envelope"></i></a>
-      <div class="language-selector" style="cursor:pointer;" title="اللغة"><i class="fas fa-globe"></i> En</div>
+      <a href="messages.html" class="action-icon messages" title="الرسائل"><i class="fas fa-envelope" style="font-size:20px;"></i></a>
+      <div class="language-selector" style="cursor:pointer;" title="اللغة"><i class="fas fa-globe" style="font-size:20px;"></i> En</div>
       <a href="index.html" class="logo"><img src="logo.png" alt="شعار المنصة" /></a>
     </div>
   </header>
@@ -49,33 +51,105 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function formatLangButton(langText) {
     const langCode = langText === 'العربية' ? 'ع' : 'En';
-    return `<i class="fas fa-globe"></i> ${langCode}`;
+    return `<i class="fas fa-globe" style="font-size:20px;"></i> ${langCode}`;
   }
 
-  if (location.pathname.includes('mystore.html')) mystoreBtn.style.display = 'none';
-  if (location.pathname.endsWith('index.html') || location.pathname === '/' || location.pathname.endsWith('/')) homeBtn.style.display = 'none';
-
   function updateHeaderButtons() {
+    const path = location.pathname;
+
     if (isLoggedIn) {
       logoutBtn.style.display = 'inline-block';
       loginBtn.style.display = 'none';
       if(accountType === 'business') {
-        mystoreBtn.style.display = location.pathname.includes('mystore.html') ? 'none' : 'inline-flex';
-        mystoreBtn.href = 'mystore.html';
-        mystoreBtn.textContent = 'دخول لمتجري';
+        if(path.includes('mystore.html')) mystoreBtn.style.display = 'none';
+        else {
+          mystoreBtn.style.display = 'inline-flex';
+          mystoreBtn.href = 'mystore.html';
+          mystoreBtn.innerHTML = `<img src="images/avatar.jpg" class="mystore-avatar" /> دخول لمتجري`;
+        }
       } else {
-        mystoreBtn.style.display = 'inline-flex';
-        mystoreBtn.href = 'myaccount.html';
-        mystoreBtn.textContent = 'دخول لحسابي';
+        if(path.includes('myaccount.html')) mystoreBtn.style.display = 'none';
+        else {
+          mystoreBtn.style.display = 'inline-flex';
+          mystoreBtn.href = 'myaccount.html';
+          mystoreBtn.innerHTML = `<img src="images/avatar.jpg" class="mystore-avatar" /> دخول لحسابي`;
+        }
       }
     } else {
       logoutBtn.style.display = 'none';
       loginBtn.style.display = 'inline-block';
+      loginBtn.textContent = 'تسجيل دخول';
       mystoreBtn.style.display = 'none';
     }
-    homeBtn.style.display = (location.pathname.endsWith('index.html') || location.pathname === '/' || location.pathname.endsWith('/')) ? 'none' : 'inline-block';
+
+    homeBtn.style.display = (path.endsWith('index.html') || path === '/' || path.endsWith('/')) ? 'none' : 'inline-block';
   }
   updateHeaderButtons();
+
+  const cities = ["مكة المكرمة", "المدينة النبوية", "الرياض", "جدة", "الدمام", "الخبر", "القصيم"];
+  const cityModal = document.createElement('div');
+  cityModal.style.cssText = 'display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); justify-content:center; align-items:center; z-index:9999;';
+  cityModal.innerHTML = `
+    <div style="background:#fff; padding:20px; border-radius:10px; min-width:300px; text-align:center; position:relative; box-shadow:0 4px 12px rgba(0,0,0,0.2);">
+      <span class="city-modal-close" style="position:absolute; top:10px; right:15px; cursor:pointer; font-size:20px;">&times;</span>
+      <h2>المملكة العربية السعودية</h2>
+      <div style="margin-top:15px;">
+        ${cities.map(city => `<div class="city-option" style="padding:10px 0; cursor:pointer; font-weight:bold;">${city}</div>`).join('')}
+      </div>
+    </div>
+  `;
+  document.body.appendChild(cityModal);
+
+  const cityClose = cityModal.querySelector('.city-modal-close');
+  const cityOptions = cityModal.querySelectorAll('.city-option');
+
+  cityBtn.addEventListener('click', e => { e.preventDefault(); cityModal.style.display = 'flex'; });
+  cityClose.addEventListener('click', () => cityModal.style.display = 'none');
+  cityOptions.forEach(option => {
+    option.addEventListener('click', () => {
+      const span = cityBtn.querySelector('span');
+      if (span) span.textContent = option.textContent;
+      cityModal.style.display = 'none';
+      localStorage.setItem('selectedCity', option.textContent);
+    });
+  });
+  cityModal.addEventListener('click', e => { if(e.target === cityModal) cityModal.style.display='none'; });
+  const savedCity = localStorage.getItem('selectedCity');
+  if(savedCity) {
+    const span = cityBtn.querySelector('span');
+    if (span) span.textContent = savedCity;
+  }
+
+  const languages = ["العربية", "English"];
+  const langModal = document.createElement('div');
+  langModal.style.cssText = 'display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); justify-content:center; align-items:center; z-index:9999;';
+  langModal.innerHTML = `
+    <div style="background:#fff; padding:20px; border-radius:10px; min-width:200px; text-align:center; position:relative; box-shadow:0 4px 12px rgba(0,0,0,0.2);">
+      <span class="lang-modal-close" style="position:absolute; top:10px; right:15px; cursor:pointer; font-size:20px;">&times;</span>
+      <h2>تغيير اللغة</h2>
+      <div style="margin-top:15px;">
+        ${languages.map(lang => `<div class="lang-option" style="padding:10px 0; cursor:pointer; font-weight:bold;">${lang}</div>`).join('')}
+      </div>
+    </div>
+  `;
+  document.body.appendChild(langModal);
+
+  const langClose = langModal.querySelector('.lang-modal-close');
+  const langOptions = langModal.querySelectorAll('.lang-option');
+
+  langBtn.addEventListener('click', () => { langModal.style.display = 'flex'; });
+  langClose.addEventListener('click', () => langModal.style.display = 'none');
+  langOptions.forEach(opt => {
+    opt.addEventListener('click', () => {
+      langBtn.innerHTML = formatLangButton(opt.textContent);
+      langModal.style.display = 'none';
+      localStorage.setItem('selectedLang', opt.textContent);
+    });
+  });
+  langModal.addEventListener('click', e => { if(e.target === langModal) langModal.style.display='none'; });
+  const savedLang = localStorage.getItem('selectedLang');
+  if(savedLang) langBtn.innerHTML = formatLangButton(savedLang);
+  else langBtn.innerHTML = formatLangButton('English');
 
   const loginModal = document.createElement('div');
   loginModal.style.cssText = `display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); justify-content:center; align-items:center; z-index:9999;`;
@@ -140,4 +214,55 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  const searchInput = container.querySelector('#search-input');
+  const searchButton = container.querySelector('#search-button');
+
+  function performSearchDemo() {
+    const searchTerm = searchInput.value.trim() || 'نتائج البحث'; 
+    const encodedSearchTerm = encodeURIComponent(searchTerm);
+    window.location.href = `search.html?q=${encodedSearchTerm}`;
+  }
+
+  if (searchButton) {
+    searchButton.addEventListener('click', performSearchDemo);
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        performSearchDemo();
+        e.preventDefault();
+      }
+    });
+  }
+});
+
+// ==========================================================
+// منطق قراءة كلمة البحث من الـ URL (يجب وضعه أيضاً في load-header.js أو ملف منفصل يتم تحميله)
+// ==========================================================
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (window.location.pathname.includes('search.html')) {
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        const searchTerm = getQueryParam('q');
+        const displayElement = document.getElementById('search-term-display');
+
+        if (searchTerm && displayElement) {
+            displayElement.innerHTML = `
+                <h2 style="font-size: 26px; color: #333; margin: 0; display:flex; align-items:center;">
+                    <i class="fas fa-search" style="font-size: 20px; color: #800000; margin-left: 10px;"></i>
+                    نتائج البحث عن: <strong style="color: #800000; margin-right: 5px;">"${decodeURIComponent(searchTerm)}"</strong>
+                </h2>
+            `;
+        } else if (displayElement) {
+            displayElement.innerHTML = `
+                <h2 style="font-size: 26px; color: #333; margin: 0;">عرض كل العروض والمنتجات</h2>
+            `;
+        }
+    }
 });
