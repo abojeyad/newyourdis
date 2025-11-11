@@ -4,8 +4,8 @@
     const card = document.createElement("div");
     card.classList.add("product-card");
 
-    // اختيار نوع الزر عشوائيًا بين 3 خيارات
-    const random = Math.floor(Math.random() * 3);
+    // اختيار نوع الزر عشوائيًا بين 2 خيارات فقط
+    const random = Math.floor(Math.random() * 2);
     let buttonHTML = "";
     let buttonUrl  = "";
 
@@ -15,9 +15,6 @@
     } else if (random === 1) {
       buttonHTML = 'فتح الموقع <i class="fas fa-map-marker-alt" style="transform: rotate(0deg);"></i>';
       buttonUrl  = product.storeUrl || "https://www.google.com/maps";
-    } else {
-      buttonHTML = 'محادثة الآن <i class="fas fa-comment"></i>';
-      buttonUrl  = "messages.html"; // رابط صفحة المحادثة
     }
 
     card.innerHTML = `
