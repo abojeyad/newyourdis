@@ -17,12 +17,12 @@ document.addEventListener('DOMContentLoaded', () => {
           <span>مكة المكرمة</span>
         </a>
     </div>
-    <div class="search-box" style="display:flex; align-items:center; border: 1px solid #ccc; border-radius: 20px; padding: 0 10px; background: #fff;">
-      <input type="text" id="search-input" placeholder="ابحث عن عروض، متاجر، منتجات..." style="border: none; outline: none; flex-grow: 1; padding: 8px 5px; background: none;" />
-      <button id="search-button" style="background:none; border:none; cursor:pointer; padding: 5px; margin-left: 5px;" title="بحث">
-        <i class="fas fa-search" style="font-size:16px; color:#800000;"></i>
-      </button>
-    </div>
+<div class="search-box-v4" style="display:flex; align-items:center; border:1px solid #ccc; border-radius:12px; background:#fff; overflow:hidden; min-width:450px;">
+  <input type="text" id="search-input-v4" placeholder="ابحث عن عروض، متاجر، منتجات..." style="border:none; outline:none; flex-grow:1; padding:10px 10px 10px 15px; background:none; border-radius:0;" />
+  <button id="search-button-v4" style="background:#fafafa; border:none; border-radius:11 0px 0px 11; cursor:pointer; padding:10px 18px; margin:0; transition:background 0.3s; font-weight:bold; color:#800000; white-space:nowrap; flex-shrink:0;" title="بحث" onmouseover="this.style.background='#e0e0e0';" onmouseout="this.style.background='#fafafa';">ابحث الآن</button>
+</div>
+
+
     <div class="header-right">
       <a href="favorites.html" class="action-icon favorites" title="المفضلة"><i class="fas fa-bookmark" style="font-size:20px;"></i></a>
       <a href="price.html" class="action-icon prices" title="الأسعار"><i class="fas fa-dollar-sign" style="font-size:20px;"></i></a>
