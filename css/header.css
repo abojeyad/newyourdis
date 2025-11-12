@@ -48,12 +48,12 @@ header {
   gap: 16px;
 }
 
-.header-left { 
-    flex-grow: 0; 
+.header-left {
+  flex-grow: 0;
 }
 
-.header-right { 
-    flex-grow: 0; 
+.header-right {
+  flex-grow: 0;
 }
 
 .header-right .menu-toggle {
@@ -64,7 +64,7 @@ header {
 .language-selector,
 .username,
 .city {
-  font-size: 16px; /* تكبير الأيقونات */
+  font-size: 16px;
   color: #333;
   cursor: pointer;
   padding: 6px 8px;
@@ -78,12 +78,12 @@ header {
 .action-icon i,
 .language-selector i,
 .city i {
-    color: #6c757d; 
-    font-size: 20px; /* تكبير الأيقونات */
+  color: #6c757d;
+  font-size: 20px;
 }
-.city i { 
-    color: #800000;
-    font-size: 22px; /* تكبير أيقونة الموقع قليلاً */
+.city i {
+  color: #800000;
+  font-size: 22px;
 }
 
 .action-icon:hover,
@@ -94,7 +94,7 @@ header {
 }
 
 .search-box {
-  flex: 1; 
+  flex: 1;
   max-width: 500px;
   margin: 0 10px;
 }
@@ -113,7 +113,7 @@ header {
 }
 
 #login-btn {
-  background-color: #800000; 
+  background-color: #800000;
   color: #fff;
   padding: 8px 15px;
   border-radius: 20px;
@@ -123,14 +123,13 @@ header {
 }
 
 #login-btn:hover {
-  background-color: #660000; 
+  background-color: #660000;
 }
 
 .username {
   font-weight: 600;
 }
 
-/* تنسيق زر متجري المحدث */
 #mystore-btn {
   background-color: transparent;
   border: 1px solid #ccc;
@@ -141,40 +140,40 @@ header {
   font-weight: 600;
   box-shadow: none;
   transition: background-color 0.3s, border-color 0.3s, transform 0.2s;
-  display: flex; 
+  display: flex;
   align-items: center;
-  gap: 8px; 
+  gap: 8px;
 }
 
 #mystore-btn:hover {
   background-color: #f0f0f0;
   border-color: #aaa;
-  transform: scale(1.02); 
+  transform: scale(1.02);
 }
 
 .mystore-avatar {
   width: 28px;
   height: 28px;
-  border-radius: 50%; 
-  object-fit: cover; 
-  transition: none; 
+  border-radius: 50%;
+  object-fit: cover;
+  transition: none;
 }
 
 #logout-btn {
-    color: #dc3545 !important;
-    font-weight: 600;
-    padding: 8px 10px;
-    border-radius: 4px;
+  color: #dc3545 !important;
+  font-weight: 600;
+  padding: 8px 10px;
+  border-radius: 4px;
 }
 #logout-btn:hover {
-    background-color: #f8d7da;
+  background-color: #f8d7da;
 }
 
 .user-arrow,
 .user-dropdown,
 .user-dropdown.show,
 .user-dropdown-list {
-    display: none !important;
+  display: none !important;
 }
 
 .city-option:hover,
@@ -183,58 +182,90 @@ header {
   border-radius: 5px;
 }
 
-/* ----------------------------------- */
-/* التجاوبية (Responsiveness) */
-/* ----------------------------------- */
-@media (max-width: 1100px) {
-    .header-right .favorites,
-    .header-right .prices {
-        display: none;
-    }
-    .search-box {
-        max-width: 400px;
-    }
+.search-area {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 1000px;
+  justify-content: center;
 }
+
+.search-box-v4 {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  border-radius: 12px;
+  background: #fff;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.search-box-v4 input {
+  border: none;
+  outline: none;
+  padding: 10px 10px 10px 15px;
+  flex-grow: 1;
+}
+
+.search-box-v4 button {
+  background: #fafafa;
+  border: none;
+  cursor: pointer;
+  padding: 10px 18px;
+  font-weight: bold;
+  color: #800000;
+  white-space: nowrap;
+}
+
+/* sidebar styles */
+#mobile-sidebar {
+  box-sizing: border-box;
+}
+
+/* responsive rules */
+@media (max-width: 1100px) {
+  .header-right .favorites,
+  .header-right .prices {
+      display: none;
+  }
+  .search-box {
+      max-width: 400px;
+  }
+}
+
 @media (max-width: 768px) {
-    header {
-        flex-wrap: wrap; 
-        padding: 8px 15px;
-        justify-content: space-between;
+  header {
+      flex-wrap: nowrap;
+      padding: 8px 12px;
+      justify-content: space-between;
     }
-    
-    .header-left {
-        order: 1; 
-        flex-basis: auto;
-        gap: 10px;
-        flex-grow: 1; 
-        justify-content: flex-start;
-    }
-
-    .header-right {
-        order: 3; 
-        display: none; 
-    }
-    
-    .search-box {
-        order: 2;
-        flex-basis: 100%;
-        margin: 8px 0;
-        max-width: 100%;
-    }
-    
-    .header-right .logo { 
-        display: block !important; 
-        margin-left: auto; 
-    }
-    
-    .menu-toggle {
-        display: block !important;
-        order: 4; 
-        font-size: 24px;
-        color: #333;
-    }
-
-    .city {
-        display: none !important;
-    }
+  .header-left {
+      display: none !important;
+  }
+  .header-right {
+      display: none !important;
+  }
+  .menu-toggle {
+      display: block !important;
+      font-size: 24px;
+      color: #333;
+  }
+  .search-area {
+      padding-right: 12px;
+      padding-left: 12px;
+  }
+  .search-box-v4 {
+      max-width: 100%;
+      margin: 0;
+  }
+  #mobile-sidebar {
+      width: 86vw;
+      max-width: 320px;
+      right: -100vw;
+      transition: right 0.32s ease;
+  }
+  #sidebar-content .sidebar-item:hover {
+      background: #f0f0f0;
+  }
 }
